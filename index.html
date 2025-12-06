@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -70,6 +69,28 @@
 	<body>
 
 	<div id="fh5co-container">
+		
+		<div class="js-sticky">
+			<div class="fh5co-main-nav">
+				<div class="container-fluid">
+					<div class="fh5co-menu-1">
+						<a href="#" data-nav-section="home" data-nav-label="Home">Home</a>
+						<a href="#" data-nav-section="about" data-nav-label="About">About</a>
+						<a href="#" data-nav-section="features" data-nav-label="Features">Features</a>
+					</div>
+					<div class="fh5co-logo">
+						<a href="index.html" data-brand>foodee</a>
+					</div>
+					<div class="fh5co-menu-2">
+						<a href="#" data-nav-section="menu" data-nav-label="Menu">Menu</a>
+						<a href="#" data-nav-section="events" data-nav-label="Events">Events</a>
+						<a href="#" data-nav-section="reservation" data-nav-label="Reservation">Reservation</a>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
 		<div id="fh5co-home" class="js-fullheight" data-section="home">
 
 			<div class="flexslider">
@@ -78,84 +99,35 @@
 				<div class="fh5co-text">
 					<div class="container">
 						<div class="row">
-							<h1 class="to-animate">foodee</h1>
-							<h2 class="to-animate">Lovely Designed <span>by</span> <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
+							<h1 class="to-animate" id="hero-title">foodee</h1>
+							<h2 class="to-animate" id="hero-subtitle">Lovely Designed <span>by</span> <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
 						</div>
 					</div>
 				</div>
-			  	<ul class="slides">
-			   	<li style="background-image: url(images/slide_1.jpg);" data-stellar-background-ratio="0.5"></li>
-			   	<li style="background-image: url(images/slide_2.jpg);" data-stellar-background-ratio="0.5"></li>
-			   	<li style="background-image: url(images/slide_3.jpg);" data-stellar-background-ratio="0.5"></li>
+			  	<ul class="slides" id="hero-slides">
+					<!-- Slides injected via JS -->
 			  	</ul>
 
 			</div>
 			
 		</div>
-		
-		<div class="js-sticky">
-			<div class="fh5co-main-nav">
-				<div class="container-fluid">
-					<div class="fh5co-menu-1">
-						<a href="#" data-nav-section="home">Home</a>
-						<a href="#" data-nav-section="about">About</a>
-						<a href="#" data-nav-section="features">Features</a>
-					</div>
-					<div class="fh5co-logo">
-						<a href="index.html">foodee</a>
-					</div>
-					<div class="fh5co-menu-2">
-						<a href="#" data-nav-section="menu">Menu</a>
-						<a href="#" data-nav-section="events">Events</a>
-						<a href="#" data-nav-section="reservation">Reservation</a>
-					</div>
-				</div>
-				
-			</div>
-		</div>
 
 		<div id="fh5co-about" data-section="about">
-			<div class="fh5co-2col fh5co-bg to-animate-2" style="background-image: url(images/res_img_1.jpg)"></div>
+			<div class="fh5co-2col fh5co-bg to-animate-2" id="about-image" style="background-image: url(images/res_img_1.jpg)"></div>
 			<div class="fh5co-2col fh5co-text">
-				<h2 class="heading to-animate">About Us</h2>
-				<p class="to-animate"><span class="firstcharacter">F</span>ar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.</p>
-				<p class="text-center to-animate"><a href="#" class="btn btn-primary btn-outline">Get in touch</a></p>
+				<h2 class="heading to-animate" id="about-heading">About Us</h2>
+				<p class="to-animate" id="about-description"><span class="firstcharacter">F</span>ar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.</p>
+				<p class="text-center to-animate"><a href="#" class="btn btn-primary btn-outline" id="about-cta">Get in touch</a></p>
 			</div>
-		</div>
+	</div>
 
 		<div id="fh5co-sayings">
 			<div class="container">
 				<div class="row to-animate">
 
 					<div class="flexslider">
-						<ul class="slides">
-							
-							<li>
-								<blockquote>
-									<p>&ldquo;Cooking is an art, but all art requires knowing something about the techniques and materials&rdquo;</p>
-									<p class="quote-author">&mdash; Nathan Myhrvold</p>
-								</blockquote>
-							</li>
-							<li>
-								<blockquote>
-									<p>&ldquo;Give a man food, and he can eat for a day. Give a man a job, and he can only eat for 30 minutes on break.&rdquo;</p>
-									<p class="quote-author">&mdash; Lev L. Spiro</p>
-								</blockquote>
-							</li>
-							<li>
-								<blockquote>
-									<p>&ldquo;Find something you’re passionate about and keep tremendously interested in it.&rdquo;</p>
-									<p class="quote-author">&mdash; Julia Child</p>
-								</blockquote>
-							</li>
-							<li>
-								<blockquote>
-									<p>&ldquo;Never work before breakfast; if you have to work before breakfast, eat your breakfast first.&rdquo;</p>
-									<p class="quote-author">&mdash; Josh Billings</p>
-								</blockquote>
-							</li>
-							
-							
+						<ul class="slides" id="quotes-list">
+							<!-- Quotes injected via JS -->
 						</ul>
 					</div>
 
@@ -269,267 +241,16 @@
 			<div class="container">
 				<div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2">
-						<h2 class="heading to-animate">Food Menu</h2>
-						<p class="sub-heading to-animate">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<h2 class="heading to-animate" id="menu-heading">Food Menu</h2>
+						<p class="sub-heading to-animate" id="menu-subheading">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
 					</div>
 				</div>
-				<div class="row row-padded">
-					<div class="col-md-6">
-						<div class="fh5co-food-menu to-animate-2">
-							<h2 class="fh5co-drinks">Drinks</h2>
-							<ul>
-								<li>
-									<div class="fh5co-food-desc">
-										<figure>
-											<img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-										</figure>
-										<div>
-											<h3>Pineapple Juice</h3>
-											<p>Far far away, behind the word mountains.</p>
-										</div>
-									</div>
-									<div class="fh5co-food-pricing">
-										$17.50
-									</div>
-								</li>
-								<li>
-									<div class="fh5co-food-desc">
-										<figure>
-											<img src="images/res_img_6.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-										</figure>
-										<div>
-											<h3>Green Juice</h3>
-											<p>Far far away, behind the word mountains.</p>
-										</div>
-									</div>
-									<div class="fh5co-food-pricing">
-										$7.99
-									</div>
-								</li>
-								<li>
-									<div class="fh5co-food-desc">
-										<figure>
-											<img src="images/res_img_7.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-										</figure>
-										<div>
-											<h3>Soft Drinks</h3>
-											<p>Far far away, behind the word mountains.</p>
-										</div>
-									</div>
-									<div class="fh5co-food-pricing">
-										$12.99
-									</div>
-								</li>
-								<li>
-									<div class="fh5co-food-desc">
-										<figure>
-											<img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-										</figure>
-										<div>
-											<h3>Carlo Rosee Drinks</h3>
-											<p>Far far away, behind the word mountains.</p>
-										</div>
-									</div>
-									<div class="fh5co-food-pricing">
-										$12.99
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="fh5co-food-menu to-animate-2">
-							<h2 class="fh5co-dishes">Steak</h2>
-							<ul>
-								<li>
-									<div class="fh5co-food-desc">
-										<figure>
-											<img src="images/res_img_3.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-										</figure>
-										<div>
-											<h3>Beef Steak</h3>
-											<p>Far far away, behind the word mountains.</p>
-										</div>
-									</div>
-									<div class="fh5co-food-pricing">
-										$17.50
-									</div>
-								</li>
-								<li>
-									<div class="fh5co-food-desc">
-										<figure>
-											<img src="images/res_img_4.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-										</figure>
-										<div>
-											<h3>Tomato with Chicken</h3>
-											<p>Far far away, behind the word mountains.</p>
-										</div>
-									</div>
-									<div class="fh5co-food-pricing">
-										$7.99
-									</div>
-								</li>
-								<li>
-									<div class="fh5co-food-desc">
-										<figure>
-											<img src="images/res_img_2.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-										</figure>
-										<div>
-											<h3>Sausages from Italy</h3>
-											<p>Far far away, behind the word mountains.</p>
-										</div>
-									</div>
-									<div class="fh5co-food-pricing">
-										$12.99
-									</div>
-								</li>
-								<li>
-									<div class="fh5co-food-desc">
-										<figure>
-											<img src="images/res_img_8.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-										</figure>
-										<div>
-											<h3>Beef Grilled</h3>
-											<p>Far far away, behind the word mountains.</p>
-										</div>
-									</div>
-									<div class="fh5co-food-pricing">
-										$12.99
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="fh5co-food-menu to-animate-2">
-							<h2 class="fh5co-drinks">Drinks</h2>
-							<ul>
-								<li>
-									<div class="fh5co-food-desc">
-										<figure>
-											<img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-										</figure>
-										<div>
-											<h3>Pineapple Juice</h3>
-											<p>Far far away, behind the word mountains.</p>
-										</div>
-									</div>
-									<div class="fh5co-food-pricing">
-										$17.50
-									</div>
-								</li>
-								<li>
-									<div class="fh5co-food-desc">
-										<figure>
-											<img src="images/res_img_6.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-										</figure>
-										<div>
-											<h3>Green Juice</h3>
-											<p>Far far away, behind the word mountains.</p>
-										</div>
-									</div>
-									<div class="fh5co-food-pricing">
-										$7.99
-									</div>
-								</li>
-								<li>
-									<div class="fh5co-food-desc">
-										<figure>
-											<img src="images/res_img_7.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-										</figure>
-										<div>
-											<h3>Soft Drinks</h3>
-											<p>Far far away, behind the word mountains.</p>
-										</div>
-									</div>
-									<div class="fh5co-food-pricing">
-										$12.99
-									</div>
-								</li>
-								<li>
-									<div class="fh5co-food-desc">
-										<figure>
-											<img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-										</figure>
-										<div>
-											<h3>Carlo Rosee Drinks</h3>
-											<p>Far far away, behind the word mountains.</p>
-										</div>
-									</div>
-									<div class="fh5co-food-pricing">
-										$12.99
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="fh5co-food-menu to-animate-2">
-							<h2 class="fh5co-dishes">Steak</h2>
-							<ul>
-								<li>
-									<div class="fh5co-food-desc">
-										<figure>
-											<img src="images/res_img_3.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-										</figure>
-										<div>
-											<h3>Beef Steak</h3>
-											<p>Far far away, behind the word mountains.</p>
-										</div>
-									</div>
-									<div class="fh5co-food-pricing">
-										$17.50
-									</div>
-								</li>
-								<li>
-									<div class="fh5co-food-desc">
-										<figure>
-											<img src="images/res_img_4.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-										</figure>
-										<div>
-											<h3>Tomato with Chicken</h3>
-											<p>Far far away, behind the word mountains.</p>
-										</div>
-									</div>
-									<div class="fh5co-food-pricing">
-										$7.99
-									</div>
-								</li>
-								<li>
-									<div class="fh5co-food-desc">
-										<figure>
-											<img src="images/res_img_2.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-										</figure>
-										<div>
-											<h3>Sausages from Italy</h3>
-											<p>Far far away, behind the word mountains.</p>
-										</div>
-									</div>
-									<div class="fh5co-food-pricing">
-										$12.99
-									</div>
-								</li>
-								<li>
-									<div class="fh5co-food-desc">
-										<figure>
-											<img src="images/res_img_8.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-										</figure>
-										<div>
-											<h3>Beef Grilled</h3>
-											<p>Far far away, behind the word mountains.</p>
-										</div>
-									</div>
-									<div class="fh5co-food-pricing">
-										$12.99
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
+				<div class="row row-padded" id="menu-sections">
+					<!-- Menu sections injected via JS -->
 				</div>
 				<div class="row">
 					<div class="col-md-4 col-md-offset-4 text-center to-animate-2">
-						<p><a href="#" class="btn btn-primary btn-outline">More Food Menu</a></p>
+						<p><a href="#" class="btn btn-primary btn-outline" id="menu-cta">More Food Menu</a></p>
 					</div>
 				</div>
 			</div>
@@ -540,35 +261,12 @@
 			<div class="container">
 				<div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2 to-animate">
-						<h2 class="heading">Upcoming Events</h2>
-						<p class="sub-heading">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<h2 class="heading" id="events-heading">Upcoming Events</h2>
+						<p class="sub-heading" id="events-subheading">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="fh5co-event to-animate-2">
-							<h3>Kitchen Workshops</h3>
-							<span class="fh5co-event-meta">March 19th, 2016</span>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<p><a href="#" class="btn btn-primary btn-outline">Read More</a></p>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="fh5co-event to-animate-2">
-							<h3>Music Concerts</h3>
-							<span class="fh5co-event-meta">March 19th, 2016</span>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<p><a href="#" class="btn btn-primary btn-outline">Read More</a></p>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="fh5co-event to-animate-2">
-							<h3>Free to Eat Party</h3>
-							<span class="fh5co-event-meta">March 19th, 2016</span>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<p><a href="#" class="btn btn-primary btn-outline">Read More</a></p>
-						</div>
-					</div>
+				<div class="row" id="events-list">
+					<!-- Events injected via JS -->
 				</div>
 			</div>
 		</div>
@@ -577,21 +275,21 @@
 			<div class="container">
 				<div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2">
-						<h2 class="heading to-animate">Reserve a Table</h2>
-						<p class="sub-heading to-animate">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<h2 class="heading to-animate" id="contact-heading">Reserve a Table</h2>
+						<p class="sub-heading to-animate" id="contact-subheading">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-6 to-animate-2">
 						<h3>Contact Info</h3>
 						<ul class="fh5co-contact-info">
-							<li class="fh5co-contact-address ">
+							<li class="fh5co-contact-address" id="contact-address">
 								<i class="icon-home"></i>
 								5555 Love Paradise 56 New Clity 5655, <br>Excel Tower United Kingdom
 							</li>
-							<li><i class="icon-phone"></i> (123) 465-6789</li>
-							<li><i class="icon-envelope"></i>info@freehtml5.co</li>
-							<li><i class="icon-globe"></i> <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></li>
+							<li><i class="icon-phone"></i> <a href="#" id="contact-phone">(123) 465-6789</a></li>
+							<li><i class="icon-envelope"></i> <a href="#" id="contact-email">info@freehtml5.co</a></li>
+							<li><i class="icon-globe"></i> <a href="http://freehtml5.co/" target="_blank" id="contact-website">freehtml5.co</a></li>
 						</ul>
 					</div>
 					<div class="col-md-6 to-animate-2">
@@ -625,7 +323,7 @@
 							<textarea name="" id="message" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
 						</div>
 						<div class="form-group ">
-							<input class="btn btn-primary" value="Send Message" type="submit">
+							<input class="btn btn-primary" value="Send Message" type="submit" id="contact-button">
 						</div>
 						</div>
 				</div>
@@ -656,6 +354,55 @@
 		</div>
 	</div>
 
+	<!-- Templates for JS -->
+	<template id="hero-slide-template">
+		<li style="background-image: url();" data-stellar-background-ratio="0.5"></li>
+	</template>
+
+	<template id="quote-template">
+		<li>
+			<blockquote>
+				<p class="quote-text">&ldquo;&rdquo;</p>
+				<p class="quote-author">&mdash; </p>
+			</blockquote>
+		</li>
+	</template>
+
+	<template id="menu-section-template">
+		<div class="col-md-6">
+			<div class="fh5co-food-menu to-animate-2">
+				<h2 class="menu-section-title"></h2>
+				<ul class="menu-items">
+				</ul>
+			</div>
+		</div>
+	</template>
+
+	<template id="menu-item-template">
+		<li>
+			<div class="fh5co-food-desc">
+				<figure>
+					<img src="" class="img-responsive menu-item-image" alt="">
+				</figure>
+				<div>
+					<h3 class="menu-item-title"></h3>
+					<p class="menu-item-description"></p>
+				</div>
+			</div>
+			<div class="fh5co-food-pricing menu-item-price"></div>
+		</li>
+	</template>
+
+	<template id="event-card-template">
+		<div class="col-md-4">
+			<div class="fh5co-event to-animate-2">
+				<h3 class="event-title"></h3>
+				<span class="fh5co-event-meta event-date"></span>
+				<p class="event-description"></p>
+				<p><a href="#" class="btn btn-primary btn-outline event-link">Read More</a></p>
+			</div>
+		</div>
+	</template>
 
 	
 	
@@ -682,9 +429,8 @@
 	       $('#date').datetimepicker();
 	   });
 	</script>
-	<!-- Main JS -->
-	<script src="js/main.js"></script>
+	<!-- App JS (Loads content then main.js) -->
+	<script src="js/app.js"></script>
 
 	</body>
 </html>
-

@@ -72,7 +72,7 @@ const renderHero = (hero = {}) => {
 			const fragment = slideTemplate.content.cloneNode(true);
 			const li = fragment.querySelector('li');
 			if (li && slide.image) {
-				li.style.backgroundImage = `url(${slide.image})`;
+				li.style.backgroundImage = `url("${slide.image}")`;
 				if (slide.parallaxRatio) {
 					li.dataset.stellarBackgroundRatio = slide.parallaxRatio;
 				}
@@ -326,4 +326,3 @@ const bootstrap = async () => {
 };
 
 bootstrap();
-
