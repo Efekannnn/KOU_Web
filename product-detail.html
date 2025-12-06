@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Product Detail — Foodee</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="favicon.ico">
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
+	
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/simple-line-icons.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<style>
+		.product-detail-page {
+			padding: 120px 0 80px;
+			min-height: 80vh;
+		}
+		.product-detail-image {
+			width: 100%;
+			height: 450px;
+			background-size: cover;
+			background-position: center;
+			border-radius: 12px;
+			box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+		}
+		.product-detail-content {
+			padding-left: 40px;
+		}
+		.product-detail-content h1 {
+			font-family: 'Playfair Display', serif;
+			font-size: 42px;
+			margin-bottom: 15px;
+			color: #333;
+		}
+		.product-detail-price {
+			font-size: 32px;
+			color: #f35f55;
+			font-weight: bold;
+			margin-bottom: 25px;
+		}
+		.product-detail-description {
+			font-size: 18px;
+			line-height: 1.8;
+			color: #555;
+			margin-bottom: 30px;
+		}
+		.product-features {
+			margin-bottom: 30px;
+		}
+		.product-features h4 {
+			font-family: 'Playfair Display', serif;
+			font-size: 20px;
+			margin-bottom: 15px;
+			color: #333;
+		}
+		.product-features ul {
+			list-style: none;
+			padding: 0;
+		}
+		.product-features li {
+			padding: 8px 0 8px 28px;
+			position: relative;
+			color: #666;
+			font-size: 16px;
+		}
+		.product-features li:before {
+			content: "✓";
+			position: absolute;
+			left: 0;
+			color: #f35f55;
+			font-weight: bold;
+		}
+		.btn-back {
+			display: inline-block;
+			padding: 14px 35px;
+			background: #f35f55;
+			color: #fff;
+			border-radius: 30px;
+			text-decoration: none;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-size: 14px;
+			margin-right: 15px;
+			transition: background 0.3s;
+		}
+		.btn-back:hover {
+			background: #d94d44;
+			color: #fff;
+		}
+		.btn-reserve {
+			display: inline-block;
+			padding: 14px 35px;
+			background: transparent;
+			color: #f35f55;
+			border: 2px solid #f35f55;
+			border-radius: 30px;
+			text-decoration: none;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-size: 14px;
+			transition: all 0.3s;
+		}
+		.btn-reserve:hover {
+			background: #f35f55;
+			color: #fff;
+		}
+		.loading-message, .error-message {
+			text-align: center;
+			padding: 100px 0;
+		}
+		.loading-message h2, .error-message h2 {
+			font-family: 'Playfair Display', serif;
+		}
+		.error-message h2 {
+			color: #f35f55;
+		}
+		@media (max-width: 991px) {
+			.product-detail-content {
+				padding: 30px 0 0;
+			}
+			.product-detail-image {
+				height: 300px;
+			}
+			.product-detail-content h1 {
+				font-size: 32px;
+			}
+		}
+	</style>
+	</head>
+	<body>
+
+	<!-- Navigation -->
+	<div class="fh5co-main-nav" style="position: fixed; top: 0; left: 0; right: 0; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 9999;">
+		<div class="container-fluid">
+			<div class="fh5co-menu-1">
+				<a href="index.html">Home</a>
+				<a href="index.html#fh5co-about">About</a>
+				<a href="index.html#fh5co-products">Products</a>
+			</div>
+			<div class="fh5co-logo">
+				<a href="index.html">foodee</a>
+			</div>
+			<div class="fh5co-menu-2">
+				<a href="index.html#fh5co-menus">Menu</a>
+				<a href="index.html#fh5co-events">Events</a>
+				<a href="index.html#fh5co-contact">Reservation</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Product Detail -->
+	<div class="product-detail-page">
+		<div class="container">
+			<!-- Loading -->
+			<div id="loading" class="loading-message">
+				<h2>Loading...</h2>
+			</div>
+
+			<!-- Error -->
+			<div id="error" class="error-message" style="display: none;">
+				<h2>Product Not Found</h2>
+				<p>The product you're looking for doesn't exist.</p>
+				<a href="index.html" class="btn-back">Back to Home</a>
+			</div>
+
+			<!-- Content -->
+			<div id="product-content" class="row" style="display: none;">
+				<div class="col-md-6">
+					<div class="product-detail-image" id="product-image"></div>
+				</div>
+				<div class="col-md-6">
+					<div class="product-detail-content">
+						<h1 id="product-title"></h1>
+						<div class="product-detail-price" id="product-price"></div>
+						<p class="product-detail-description" id="product-description"></p>
+						
+						<div class="product-features">
+							<h4>Features</h4>
+							<ul id="product-features"></ul>
+						</div>
+
+						<a href="index.html#fh5co-products" class="btn-back">← Back to Products</a>
+						<a href="index.html#fh5co-contact" class="btn-reserve">Reserve a Table</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<div id="fh5co-footer" style="background: #333; color: #fff; padding: 40px 0;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<p style="color: #aaa;">&copy; 2016 Foodee. Designed by <a href="http://freehtml5.co/" target="_blank" style="color: #f35f55;">FREEHTML5.co</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// Sayfa yüklendiğinde ürün detayını çek
+		(async function() {
+			const urlParams = new URLSearchParams(window.location.search);
+			const productId = urlParams.get('id');
+
+			const loadingEl = document.getElementById('loading');
+			const errorEl = document.getElementById('error');
+			const contentEl = document.getElementById('product-content');
+
+			if (!productId) {
+				loadingEl.style.display = 'none';
+				errorEl.style.display = 'block';
+				return;
+			}
+
+			try {
+				const response = await fetch('data/content.json', { cache: 'no-cache' });
+				if (!response.ok) throw new Error('Failed to load');
+				
+				const data = await response.json();
+				const product = data.products?.items?.find(p => p.id === productId);
+
+				if (!product) {
+					loadingEl.style.display = 'none';
+					errorEl.style.display = 'block';
+					return;
+				}
+
+				// Sayfa başlığı
+				document.title = `${product.title} — Foodee`;
+
+				// İçeriği doldur
+				document.getElementById('product-image').style.backgroundImage = `url('${product.image}')`;
+				document.getElementById('product-title').textContent = product.title;
+				document.getElementById('product-price').textContent = product.price;
+				document.getElementById('product-description').textContent = product.description;
+
+				// Özellikler
+				const featuresEl = document.getElementById('product-features');
+				if (product.features && Array.isArray(product.features)) {
+					featuresEl.innerHTML = product.features.map(f => `<li>${f}</li>`).join('');
+				}
+
+				// Göster
+				loadingEl.style.display = 'none';
+				contentEl.style.display = 'flex';
+
+			} catch (error) {
+				console.error('Error:', error);
+				loadingEl.style.display = 'none';
+				errorEl.style.display = 'block';
+			}
+		})();
+	</script>
+
+	</body>
+</html>
+

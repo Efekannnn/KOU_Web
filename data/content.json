@@ -203,6 +203,44 @@
     "email": "info@freehtml5.co",
     "website": { "label": "freehtml5.co", "url": "http://freehtml5.co/" },
     "buttonLabel": "Send Message"
+  },
+  "products": {
+    "title": "Our Special Products",
+    "subtitle": "Discover our chef's signature dishes, crafted with the finest ingredients.",
+    "items": [
+      {
+        "id": "special-steak",
+        "title": "Chef's Special Steak",
+        "price": "$25.00",
+        "description": "Premium aged beef served with roasted vegetables and our signature sauce.",
+        "image": "images/res_img_3.jpg",
+        "features": ["21-day aged beef", "Seasonal vegetables", "Signature sauce"]
+      },
+      {
+        "id": "italian-pasta",
+        "title": "Handmade Italian Pasta",
+        "price": "$18.50",
+        "description": "Authentic Italian recipe with fresh tomatoes, basil, and parmesan cheese.",
+        "image": "images/res_img_4.jpg",
+        "features": ["Fresh daily pasta", "San Marzano tomatoes", "Aged parmesan"]
+      },
+      {
+        "id": "organic-salad",
+        "title": "Organic Garden Salad",
+        "price": "$12.00",
+        "description": "Fresh greens from local farms topped with grilled chicken and balsamic glaze.",
+        "image": "images/res_img_6.jpg",
+        "features": ["Locally sourced", "Organic produce", "Free-range chicken"]
+      },
+      {
+        "id": "seafood-platter",
+        "title": "Mediterranean Seafood",
+        "price": "$32.00",
+        "description": "Fresh seafood including grilled prawns, calamari, served with lemon butter sauce.",
+        "image": "images/res_img_2.jpg",
+        "features": ["Fresh daily catch", "Grilled to order", "Lemon butter sauce"]
+      }
+    ]
   }
 }
 

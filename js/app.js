@@ -234,6 +234,72 @@ const renderEvents = (events = {}) => {
 	}
 };
 
+const renderProducts = (products = {}) => {
+	// Başlık ve alt başlık
+	const headingEl = document.getElementById('products-heading');
+	if (headingEl && products.title) {
+		headingEl.textContent = products.title;
+	}
+
+	const subheadingEl = document.getElementById('products-subheading');
+	if (subheadingEl && products.subtitle) {
+		subheadingEl.textContent = products.subtitle;
+	}
+
+	// Swiper slides container
+	const slidesContainer = document.getElementById('product-slides');
+	if (!slidesContainer || !Array.isArray(products.items)) return;
+
+	// Slide'ları oluştur
+	slidesContainer.innerHTML = '';
+	products.items.forEach((product) => {
+		const slide = document.createElement('div');
+		slide.className = 'swiper-slide';
+		slide.innerHTML = `
+			<div class="product-slide">
+				<div class="product-slide-image" style="background-image: url('${product.image}')"></div>
+				<div class="product-slide-content">
+					<h3>${product.title}</h3>
+					<div class="product-price">${product.price}</div>
+					<p>${product.description}</p>
+					<a href="product-detail.html?id=${product.id}" class="btn-details">View Details</a>
+				</div>
+			</div>
+		`;
+		slidesContainer.appendChild(slide);
+	});
+
+	// Swiper'ı başlat
+	if (typeof Swiper !== 'undefined') {
+		new Swiper('.product-swiper', {
+			slidesPerView: 1,
+			spaceBetween: 30,
+			loop: true,
+			autoplay: {
+				delay: 4000,
+				disableOnInteraction: false,
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			breakpoints: {
+				640: {
+					slidesPerView: 2,
+				},
+				1024: {
+					slidesPerView: 3,
+				},
+			},
+		});
+		console.log('Product Swiper başlatıldı.');
+	}
+};
+
 const renderContact = (contact = {}) => {
 	const headingEl = document.getElementById('contact-heading');
 	if (headingEl && contact.title) {
@@ -283,6 +349,7 @@ const renderSite = (content) => {
 	renderSiteMeta(content.site);
 	renderHero(content.hero);
 	renderAbout(content.about);
+	renderProducts(content.products);
 	renderQuotes(content.quotes);
 	renderMenu(content.menu);
 	renderEvents(content.events);
