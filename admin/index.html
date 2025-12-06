@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Foodee İçerik Yöneticisi</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsoneditor@9/dist/jsoneditor.min.css">
+	<style>
+		:root {
+			font-family: "Segoe UI", Arial, sans-serif;
+			color: #1f1f1f;
+			background: #f5f5f5;
+		}
+		body {
+			margin: 0;
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+		}
+		header, footer {
+			background: #111;
+			color: #fff;
+			padding: 1rem 2rem;
+		}
+		header h1 {
+			margin: 0;
+			font-size: 1.5rem;
+		}
+		main {
+			flex: 1;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1.5rem;
+			padding: 1.5rem;
+		}
+		.panel {
+			background: #fff;
+			box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+			border-radius: 12px;
+			padding: 1.5rem;
+		}
+		.editor-panel {
+			flex: 2 1 520px;
+			min-height: 520px;
+		}
+		.info-panel {
+			flex: 1 1 280px;
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
+		.actions {
+			display: flex;
+			flex-direction: column;
+			gap: 0.75rem;
+		}
+		button {
+			padding: 0.85rem 1rem;
+			border-radius: 8px;
+			border: none;
+			font-size: 0.95rem;
+			cursor: pointer;
+			transition: transform 0.2s ease, box-shadow 0.2s ease;
+		}
+		button.primary {
+			background: #f35f55;
+			color: #fff;
+			box-shadow: 0 8px 15px rgba(243,95,85,0.3);
+		}
+		button.secondary {
+			background: #fff;
+			color: #1f1f1f;
+			border: 1px solid #d3d3d3;
+		}
+		button.danger {
+			background: #ffebe9;
+			color: #b81414;
+			border: 1px solid #ffbab1;
+		}
+		button:hover {
+			transform: translateY(-1px);
+			box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+		}
+		ol {
+			padding-left: 1.25rem;
+		}
+		li + li {
+			margin-top: 0.5rem;
+		}
+		.notice {
+			background: #fef6e4;
+			color: #7a4a02;
+			border-left: 4px solid #f5c518;
+			padding: 0.75rem 1rem;
+			border-radius: 0 8px 8px 0;
+			font-size: 0.9rem;
+		}
+		#jsoneditor {
+			height: calc(100% - 1rem);
+		}
+		@media (max-width: 960px) {
+			main {
+				flex-direction: column;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Foodee İçerik Yönetimi</h1>
+		<p style="margin:0;font-size:0.95rem;color:#d3d3d3;">JSON tabanlı içerikleri düzenleyin, önizleyin ve siteye aktarın.</p>
+	</header>
+	<main>
+		<section class="panel editor-panel">
+			<div id="jsoneditor"></div>
+		</section>
+		<section class="panel info-panel">
+			<div>
+				<h2>Nasıl Çalışır?</h2>
+				<ol>
+					<li>Soldaki editörde içerik bloklarını güncelleyin.</li>
+					<li>"Önizlemeye Uygula" ile tarayıcınızda geçici olarak saklayın.</li>
+					<li>Ana sayfayı açarak içerikleri canlı olarak test edin.</li>
+					<li>Hazır olduğunuzda "JSON'u indir" diyerek <code>data/content.json</code> dosyasını değiştirin ve sitenizi yeniden yayınlayın.</li>
+				</ol>
+			</div>
+			<div class="actions">
+				<button id="apply-preview" class="primary">Önizlemeye Uygula</button>
+				<button id="open-preview" class="secondary">Ana Sayfayı Aç</button>
+				<button id="download-json" class="secondary">JSON'u indir</button>
+				<button id="clear-preview" class="danger">Önizleme Verisini Temizle</button>
+			</div>
+			<div class="notice">
+				<p style="margin:0;">Bu arayüz sadece statik dosyaları yönetir. Değişikliklerin herkes tarafından görülmesi için indirilen JSON dosyasını projedeki <strong>data/content.json</strong> ile değiştirip siteyi tekrar dağıtmanız gerekir.</p>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<p style="margin:0;font-size:0.85rem;">Foodee Yönetim Paneli &middot; Demo amaçlıdır, ekstra sunucu kurulumu gerekmez.</p>
+	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/jsoneditor@9/dist/jsoneditor.min.js"></script>
+	<script>
+		const STORAGE_KEY = 'foodeeCmsPreview';
+		const editorContainer = document.getElementById('jsoneditor');
+		const editor = new JSONEditor(editorContainer, {
+			mode: 'tree',
+			modes: ['tree', 'code'],
+			onError: (err) => alert(err.toString())
+		});
+
+		const loadInitialContent = async () => {
+			try {
+				const response = await fetch('../data/content.json', { cache: 'no-cache' });
+				const data = await response.json();
+				editor.set(data);
+			} catch (error) {
+				console.error('JSON yüklenemedi.', error);
+				alert('content.json yüklenirken hata oluştu. Dosyanın mevcut olduğundan emin olun.');
+			}
+		};
+
+		const getEditorData = () => {
+			try {
+				return editor.get();
+			} catch (error) {
+				alert('JSON verisi hatalı: ' + error.message);
+				throw error;
+			}
+		};
+
+		document.getElementById('apply-preview').addEventListener('click', () => {
+			const data = getEditorData();
+			window.localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+			alert('Önizleme kaydedildi. "Ana sayfayı aç" diyerek sonucu görebilirsiniz.');
+		});
+
+		document.getElementById('open-preview').addEventListener('click', () => {
+			window.open('../index.html', '_blank');
+		});
+
+		document.getElementById('download-json').addEventListener('click', () => {
+			const data = getEditorData();
+			const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+			const url = URL.createObjectURL(blob);
+			const link = document.createElement('a');
+			link.href = url;
+			link.download = 'content.json';
+			link.click();
+			URL.revokeObjectURL(url);
+		});
+
+		document.getElementById('clear-preview').addEventListener('click', () => {
+			window.localStorage.removeItem(STORAGE_KEY);
+			alert('Önizleme verisi temizlendi.');
+		});
+
+		loadInitialContent();
+	</script>
+</body>
+</html>
+

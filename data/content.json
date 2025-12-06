@@ -1,0 +1,208 @@
+{
+  "site": {
+    "brand": "foodee",
+    "title": "Foodee — Lovely Designed HTML5 Restaurant Theme",
+    "nav": [
+      { "section": "home", "label": "Home" },
+      { "section": "about", "label": "About" },
+      { "section": "features", "label": "Features" },
+      { "section": "menu", "label": "Menu" },
+      { "section": "events", "label": "Events" },
+      { "section": "reservation", "label": "Reservation" }
+    ]
+  },
+  "hero": {
+    "title": "foodee",
+    "subtitleHtml": "Lovely Designed <span>by</span> <a href=\"http://freehtml5.co/\" target=\"_blank\">freehtml5.co</a>",
+    "slides": [
+      { "image": "images/slide_1.jpg", "parallaxRatio": 0.5 },
+      { "image": "images/slide_2.jpg", "parallaxRatio": 0.5 },
+      { "image": "images/slide_3.jpg", "parallaxRatio": 0.5 }
+    ]
+  },
+  "about": {
+    "heading": "About Us",
+    "bodyHtml": "<span class=\"firstcharacter\">F</span>ar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.",
+    "cta": { "label": "Get in touch", "url": "#" },
+    "image": "images/res_img_1.jpg"
+  },
+  "quotes": [
+    {
+      "text": "Cooking is an art, but all art requires knowing something about the techniques and materials",
+      "author": "Nathan Myhrvold"
+    },
+    {
+      "text": "Give a man food, and he can eat for a day. Give a man a job, and he can only eat for 30 minutes on break.",
+      "author": "Lev L. Spiro"
+    },
+    {
+      "text": "Find something you're passionate about and keep tremendously interested in it.",
+      "author": "Julia Child"
+    },
+    {
+      "text": "Never work before breakfast; if you have to work before breakfast, eat your breakfast first.",
+      "author": "Josh Billings"
+    }
+  ],
+  "menu": {
+    "title": "Food Menu",
+    "subtitle": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    "sections": [
+      {
+        "title": "Drinks",
+        "style": "fh5co-drinks",
+        "items": [
+          {
+            "title": "Pineapple Juice",
+            "description": "Far far away, behind the word mountains.",
+            "price": "$17.50",
+            "image": "images/res_img_5.jpg"
+          },
+          {
+            "title": "Green Juice",
+            "description": "Far far away, behind the word mountains.",
+            "price": "$7.99",
+            "image": "images/res_img_6.jpg"
+          },
+          {
+            "title": "Soft Drinks",
+            "description": "Far far away, behind the word mountains.",
+            "price": "$12.99",
+            "image": "images/res_img_7.jpg"
+          },
+          {
+            "title": "Carlo Rosee Drinks",
+            "description": "Far far away, behind the word mountains.",
+            "price": "$12.99",
+            "image": "images/res_img_5.jpg"
+          }
+        ]
+      },
+      {
+        "title": "Steak",
+        "style": "fh5co-dishes",
+        "items": [
+          {
+            "title": "Beef Steak",
+            "description": "Far far away, behind the word mountains.",
+            "price": "$17.50",
+            "image": "images/res_img_3.jpg"
+          },
+          {
+            "title": "Tomato with Chicken",
+            "description": "Far far away, behind the word mountains.",
+            "price": "$7.99",
+            "image": "images/res_img_4.jpg"
+          },
+          {
+            "title": "Sausages from Italy",
+            "description": "Far far away, behind the word mountains.",
+            "price": "$12.99",
+            "image": "images/res_img_2.jpg"
+          },
+          {
+            "title": "Beef Grilled",
+            "description": "Far far away, behind the word mountains.",
+            "price": "$12.99",
+            "image": "images/res_img_8.jpg"
+          }
+        ]
+      },
+      {
+        "title": "Smoothies",
+        "style": "fh5co-drinks",
+        "items": [
+          {
+            "title": "Berry Splash",
+            "description": "Strawberry, raspberry and mint blended with coconut milk.",
+            "price": "$9.50",
+            "image": "images/res_img_5.jpg"
+          },
+          {
+            "title": "Tropical Detox",
+            "description": "Pineapple, cucumber, kale and chia seeds.",
+            "price": "$10.50",
+            "image": "images/res_img_6.jpg"
+          },
+          {
+            "title": "Cocoa Protein",
+            "description": "Cacao nibs, banana and almond butter.",
+            "price": "$11.00",
+            "image": "images/res_img_7.jpg"
+          },
+          {
+            "title": "Violet Velvet",
+            "description": "Blueberry, lavender syrup and oat milk.",
+            "price": "$10.25",
+            "image": "images/res_img_5.jpg"
+          }
+        ]
+      },
+      {
+        "title": "Chef Specials",
+        "style": "fh5co-dishes",
+        "items": [
+          {
+            "title": "Organic Egg",
+            "description": "Soft boiled organic egg with miso butter toast.",
+            "price": "$4.99",
+            "image": "images/res_img_7.jpg"
+          },
+          {
+            "title": "Salad with Crispy Chicken",
+            "description": "Local greens, honey mustard dressing and sesame seeds.",
+            "price": "$8.50",
+            "image": "images/res_img_6.jpg"
+          },
+          {
+            "title": "Tomato Soup with Chicken",
+            "description": "Slow roasted tomato broth finished with basil oil.",
+            "price": "$12.99",
+            "image": "images/res_img_3.jpg"
+          },
+          {
+            "title": "Cheese and Garlic Toast",
+            "description": "House sourdough, roasted garlic butter and parmesan.",
+            "price": "$4.50",
+            "image": "images/res_img_8.jpg"
+          }
+        ]
+      }
+    ],
+    "cta": { "label": "More Food Menu", "url": "#" }
+  },
+  "events": {
+    "title": "Upcoming Events",
+    "subtitle": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    "items": [
+      {
+        "title": "Kitchen Workshops",
+        "date": "March 19th, 2016",
+        "description": "Hands-on cooking classes with our chef to master seasonal plates.",
+        "link": { "label": "Read More", "url": "#" }
+      },
+      {
+        "title": "Music Concerts",
+        "date": "April 2nd, 2016",
+        "description": "Live acoustic night featuring local artists and curated tasting menu.",
+        "link": { "label": "Reserve Seat", "url": "#" }
+      },
+      {
+        "title": "Free to Eat Party",
+        "date": "April 23rd, 2016",
+        "description": "Community dinner that highlights produce from nearby farms.",
+        "link": { "label": "Join the List", "url": "#" }
+      }
+    ]
+  },
+  "contact": {
+    "title": "Reserve a Table",
+    "subtitle": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    "addressHtml": "5555 Love Paradise 56 New Clity 5655, <br>Excel Tower United Kingdom",
+    "phone": { "label": "(123) 465-6789", "value": "+441234656789" },
+    "email": "info@freehtml5.co",
+    "website": { "label": "freehtml5.co", "url": "http://freehtml5.co/" },
+    "buttonLabel": "Send Message"
+  }
+}
+
