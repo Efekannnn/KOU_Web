@@ -58,7 +58,7 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<!-- Swiper CSS -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+	<link rel="stylesheet" href="css/swiper-bundle.min.css">
 
 	<!-- Product Slider Styles -->
 	<style>
@@ -311,6 +311,23 @@
 			position: relative;
 			top: -1px;
 		}
+		/* Feedback form */
+		.feedback-card {
+			background: #ffffff;
+			border: 1px solid #ececf0;
+			border-radius: 12px;
+			box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+			padding: 24px;
+			margin-top: 20px;
+		}
+		.feedback-card h3 {
+			margin-top: 0;
+			margin-bottom: 8px;
+		}
+		.feedback-card .help-text {
+			color: #666;
+			margin-bottom: 16px;
+		}
 	</style>
 
 	<!-- Modernizr JS -->
@@ -353,7 +370,13 @@
 					<div class="fh5co-menu-2">
 						<a href="#" data-nav-section="about" data-nav-label="Hakkımızda">Hakkımızda</a>
 						<a href="announcements.html" class="external" data-nav-label="Duyurular">Duyurular</a>
-						<a href="#" data-nav-section="reservation" data-nav-label="İletişim">İletişim</a>
+						<div class="nav-dropdown">
+							<a href="#" data-nav-section="reservation" data-nav-label="İletişim">İletişim <span class="caret"></span></a>
+							<div class="nav-dropdown-menu">
+								<a href="#" data-nav-section="reservation" data-nav-label="İletişim">İletişim</a>
+								<a href="feedback.html" class="external">Şikayet / Öneri</a>
+							</div>
+						</div>
 					</div>
 				</div>
 				
@@ -764,7 +787,7 @@
 	<!-- Flexslider -->
 	<script src="js/jquery.flexslider-min.js"></script>
 	<!-- Swiper JS -->
-	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<script src="js/swiper-bundle.min.js"></script>
 	<script>
 		$(function () {
 	       $('#date').datetimepicker();

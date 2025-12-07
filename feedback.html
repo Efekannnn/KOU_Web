@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Şikayet / Öneri — Soos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="favicon.ico">
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/simple-line-icons.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<style>
+		body {
+			background:
+				linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.08)),
+				url('images/wood_1.png');
+			background-size: 380px 380px;
+			background-repeat: repeat;
+			background-position: center;
+		}
+		.page-section {
+			padding: 140px 0 80px;
+		}
+		.feedback-card {
+			background: #ffffff;
+			border: 1px solid #ececf0;
+			border-radius: 12px;
+			box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+			padding: 24px;
+			margin-top: 10px;
+		}
+		.feedback-card h3 {
+			margin-top: 0;
+			margin-bottom: 8px;
+		}
+		.feedback-card .help-text {
+			color: #666;
+			margin-bottom: 16px;
+		}
+	</style>
+	</head>
+	<body>
+
+	<div class="fh5co-main-nav" style="position: fixed; top:0; left:0; right:0; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.08); z-index:9999;">
+		<div class="container-fluid">
+			<div class="fh5co-menu-1">
+				<a href="index.html">Ana Sayfa</a>
+				<div class="nav-dropdown">
+					<a href="index.html#fh5co-products" class="external">Ürünlerimiz <span class="caret"></span></a>
+					<div class="nav-dropdown-menu">
+						<a href="index.html#fh5co-products" class="external">Öne Çıkan Ürünler</a>
+						<a href="index.html#fh5co-featured" class="external">Sos Menü</a>
+						<a href="index.html#fh5co-events" class="external">Özel Etkinlikler</a>
+					</div>
+				</div>
+				<div class="nav-dropdown">
+					<a href="announcements.html" class="external">Birimlerimiz <span class="caret"></span></a>
+					<div class="nav-dropdown-menu">
+						<a href="announcements.html#merkez" class="external">Merkez Ofis</a>
+						<a href="announcements.html#sube-1" class="external">Şube 1</a>
+						<a href="announcements.html#sube-2" class="external">Şube 2</a>
+					</div>
+				</div>
+			</div>
+			<div class="fh5co-logo">
+				<a href="index.html">soos</a>
+			</div>
+			<div class="fh5co-menu-2">
+				<a href="index.html#fh5co-about" class="external">Hakkımızda</a>
+				<a href="announcements.html" class="external">Duyurular</a>
+				<div class="nav-dropdown">
+					<a href="index.html#fh5co-contact" class="external">İletişim <span class="caret"></span></a>
+					<div class="nav-dropdown-menu">
+						<a href="index.html#fh5co-contact" class="external">İletişim</a>
+						<a href="feedback.html" class="external">Şikayet / Öneri</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="page-section">
+		<div class="container">
+			<div class="row text-center fh5co-heading row-padded">
+				<div class="col-md-8 col-md-offset-2">
+					<h2 class="heading" style="color:#f35f55;">Şikayet ve Öneri Formu</h2>
+					<p class="sub-heading">Başlık ve içerik alanlarını doldurun; mesajınız müşteri ilişkileri temsilcisine iletilmek üzere hazırlanacaktır.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="feedback-card">
+						<form id="feedback-form" action="mailto:musteri@soos.com" method="post" enctype="text/plain">
+							<div class="form-group">
+								<label for="feedback-subject">Başlık</label>
+								<input id="feedback-subject" name="Konu" class="form-control" placeholder="Başlık" type="text" required>
+							</div>
+							<div class="form-group">
+								<label for="feedback-email">E-posta</label>
+								<input id="feedback-email" name="E-posta" class="form-control" placeholder="E-posta (size dönüş yapalım)" type="email" required>
+							</div>
+							<div class="form-group">
+								<label for="feedback-message">İçerik</label>
+								<textarea id="feedback-message" name="Mesaj" cols="30" rows="6" class="form-control" placeholder="Şikayet veya öneriniz" required></textarea>
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary">Gönder</button>
+								<small style="display:block; margin-top:6px; color:#777;">Bu form, müşteri ilişkileri temsilcisine e-posta ile iletilmek üzere tasarlanmıştır.</small>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-footer">
+		<div class="container">
+			<div class="row row-padded">
+				<div class="col-md-12 text-center">
+					<p class="to-animate">&copy; 2024 Soos. <br> Designed by Efekan.</p>
+					<p class="text-center to-animate"><a href="#" class="js-gotop">Yukarı Çık</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		(function() {
+			var form = document.getElementById('feedback-form');
+			if (!form) return;
+			form.addEventListener('submit', function(e) {
+				// Demo davranışı: gerçek e-posta entegrasyonu için sunucu gerekir
+				alert('Mesajınız müşteri ilişkileri temsilcisine e-posta ile iletilmek üzere hazırlandı (demo).');
+				// mailto davranışı için form submitine izin vermek isterseniz alttaki satırı kaldırın
+				e.preventDefault();
+				form.reset();
+			});
+		})();
+	</script>
+
+	</body>
+</html>
+
