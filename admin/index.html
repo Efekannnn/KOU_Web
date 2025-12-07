@@ -3,29 +3,37 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Foodee İçerik Yöneticisi</title>
+	<title>Soos İçerik Yöneticisi</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsoneditor@9/dist/jsoneditor.min.css">
 	<style>
 		:root {
 			font-family: "Segoe UI", Arial, sans-serif;
 			color: #1f1f1f;
-			background: #f5f5f5;
+			background: #f7f8fb;
 		}
 		body {
 			margin: 0;
 			min-height: 100vh;
 			display: flex;
 			flex-direction: column;
+			background: radial-gradient(circle at 20% 20%, rgba(243,95,85,0.08), transparent 32%), radial-gradient(circle at 80% 0%, rgba(59,130,246,0.08), transparent 28%), #f7f8fb;
 		}
 		header, footer {
-			background: #111;
+			background: #0f1013;
 			color: #fff;
-			padding: 1rem 2rem;
+			padding: 1.1rem 2rem;
+			box-shadow: 0 8px 20px rgba(0,0,0,0.18);
 		}
 		header h1 {
 			margin: 0;
-			font-size: 1.5rem;
+			font-size: 1.45rem;
+			letter-spacing: 0.2px;
+		}
+		.header-sub {
+			margin: 0.15rem 0 0;
+			font-size: 0.95rem;
+			color: #cfd2d8;
 		}
 		main {
 			flex: 1;
@@ -39,6 +47,7 @@
 			box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 			border-radius: 12px;
 			padding: 1.5rem;
+			border: 1px solid #e9e9ee;
 		}
 		.editor-panel {
 			flex: 2 1 520px;
@@ -96,6 +105,20 @@
 			border-radius: 0 8px 8px 0;
 			font-size: 0.9rem;
 		}
+		h2 {
+			margin-top: 0;
+			color: #0f1013;
+		}
+		.badge {
+			display: inline-block;
+			padding: 6px 10px;
+			border-radius: 999px;
+			background: rgba(243,95,85,0.12);
+			color: #f35f55;
+			font-weight: 600;
+			font-size: 0.85rem;
+			margin-left: 0.4rem;
+		}
 		#jsoneditor {
 			height: calc(100% - 1rem);
 		}
@@ -108,8 +131,8 @@
 </head>
 <body>
 	<header>
-		<h1>Foodee İçerik Yönetimi</h1>
-		<p style="margin:0;font-size:0.95rem;color:#d3d3d3;">JSON tabanlı içerikleri düzenleyin, önizleyin ve siteye aktarın.</p>
+		<h1>Soos İçerik Yönetimi <span class="badge">Admin</span></h1>
+		<p class="header-sub">JSON tabanlı içerikleri düzenleyin, önizleyin ve siteye aktarın.</p>
 	</header>
 	<main>
 		<section class="panel editor-panel">
@@ -137,7 +160,7 @@
 		</section>
 	</main>
 	<footer>
-		<p style="margin:0;font-size:0.85rem;">Foodee Yönetim Paneli &middot; Demo amaçlıdır, ekstra sunucu kurulumu gerekmez.</p>
+		<p style="margin:0;font-size:0.88rem;color:#e0e3ea;">Soos Yönetim Paneli · Demo amaçlıdır, ekstra sunucu kurulumu gerekmez.</p>
 	</footer>
 	<script src="https://cdn.jsdelivr.net/npm/jsoneditor@9/dist/jsoneditor.min.js"></script>
 	<script>

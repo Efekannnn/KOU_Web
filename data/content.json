@@ -1,19 +1,19 @@
 {
   "site": {
-    "brand": "foodee",
-    "title": "Foodee — Lovely Designed HTML5 Restaurant Theme",
+    "brand": "soos",
+    "title": "Soos — Özenle Hazırlanmış Soslar ve Tatlar",
     "nav": [
-      { "section": "home", "label": "Home" },
-      { "section": "about", "label": "About" },
-      { "section": "features", "label": "Features" },
-      { "section": "menu", "label": "Menu" },
-      { "section": "events", "label": "Events" },
-      { "section": "reservation", "label": "Reservation" }
+      { "section": "home", "label": "Ana Sayfa" },
+      { "section": "about", "label": "Hakkımızda" },
+      { "section": "features", "label": "Sos Menüsü" },
+      { "section": "menu", "label": "Menü" },
+      { "section": "events", "label": "Etkinlikler" },
+      { "section": "reservation", "label": "İletişim" }
     ]
   },
   "hero": {
-    "title": "foodee",
-    "subtitleHtml": "Lovely Designed <span>by</span> <a href=\"http://freehtml5.co/\" target=\"_blank\">freehtml5.co</a>",
+    "title": "soos",
+    "subtitleHtml": "Designed by Efekan",
     "slides": [
       { "image": "images/slide_1.jpg", "parallaxRatio": 0.5 },
       { "image": "images/slide_2.jpg", "parallaxRatio": 0.5 },
@@ -21,188 +21,104 @@
     ]
   },
   "about": {
-    "heading": "About Us",
-    "bodyHtml": "<span class=\"firstcharacter\">F</span>ar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.",
-    "cta": { "label": "Get in touch", "url": "#" },
+    "heading": "Hakkımızda",
+    "bodyHtml": "<span class=\"firstcharacter\">S</span>oos, özenle seçilmiş malzemelerle hazırlanan soslar ve eşlikçileriyle masanıza yeni bir deneyim getirir. Her kavanozda taze aromalar, dengeli tatlar ve paylaşmaya değer reçeteler var. Şef ekibimiz, ev yapımı dokunuşu modern tekniklerle birleştiriyor; böylece ister atıştırmalık, ister ana yemek olsun tabağınıza yakışan sosu kolayca buluyorsunuz.",
+    "cta": { "label": "", "url": "" },
     "image": "images/res_img_1.jpg"
   },
   "quotes": [
     {
-      "text": "Cooking is an art, but all art requires knowing something about the techniques and materials",
+      "text": "Mutfak bir sahne; malzemeleriniz ve tekniğiniz hikâyeyi anlatır.",
       "author": "Nathan Myhrvold"
     },
     {
-      "text": "Give a man food, and he can eat for a day. Give a man a job, and he can only eat for 30 minutes on break.",
+      "text": "Bir parça iyi sos, en sade yemeği bile hatırlanır kılar.",
       "author": "Lev L. Spiro"
     },
     {
-      "text": "Find something you're passionate about and keep tremendously interested in it.",
+      "text": "Tutkunu olduğun lezzetin peşini bırakma; detaylarda fark yaratılır.",
       "author": "Julia Child"
     },
     {
-      "text": "Never work before breakfast; if you have to work before breakfast, eat your breakfast first.",
+      "text": "Güne güzel bir kahvaltı ve doğru tatlarla başlamak, tüm günü değiştirir.",
       "author": "Josh Billings"
     }
   ],
   "menu": {
-    "title": "Food Menu",
-    "subtitle": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    "title": "Yemek Menüsü",
+    "subtitle": "Uzun masalar, paylaşılacak tatlar ve mevsimlik malzemelerden ilham alan tabaklar.",
     "sections": [
       {
-        "title": "Drinks",
+        "title": "İçecekler",
         "style": "fh5co-drinks",
         "items": [
-          {
-            "title": "Pineapple Juice",
-            "description": "Far far away, behind the word mountains.",
-            "price": "$17.50",
-            "image": "images/res_img_5.jpg"
-          },
-          {
-            "title": "Green Juice",
-            "description": "Far far away, behind the word mountains.",
-            "price": "$7.99",
-            "image": "images/res_img_6.jpg"
-          },
-          {
-            "title": "Soft Drinks",
-            "description": "Far far away, behind the word mountains.",
-            "price": "$12.99",
-            "image": "images/res_img_7.jpg"
-          },
-          {
-            "title": "Carlo Rosee Drinks",
-            "description": "Far far away, behind the word mountains.",
-            "price": "$12.99",
-            "image": "images/res_img_5.jpg"
-          }
+          { "title": "Ananas Suyu", "description": "Taze ananas ve misket limonu ile ferahlatıcı karışım.", "price": "₺175", "image": "images/res_img_5.jpg" },
+          { "title": "Yeşil Detoks", "description": "Salatalık, ıspanak, elma ve zencefilli yeşil karışım.", "price": "₺130", "image": "images/res_img_6.jpg" },
+          { "title": "Soğuk İçecekler", "description": "Meyve püreleriyle tatlandırılmış özel soğuk içecekler.", "price": "₺145", "image": "images/res_img_7.jpg" },
+          { "title": "Rose Serinletici", "description": "Nar, gül şurubu ve soda ile hafif köpüklü içecek.", "price": "₺150", "image": "images/res_img_5.jpg" }
         ]
       },
       {
-        "title": "Steak",
+        "title": "Izgara",
         "style": "fh5co-dishes",
         "items": [
-          {
-            "title": "Beef Steak",
-            "description": "Far far away, behind the word mountains.",
-            "price": "$17.50",
-            "image": "images/res_img_3.jpg"
-          },
-          {
-            "title": "Tomato with Chicken",
-            "description": "Far far away, behind the word mountains.",
-            "price": "$7.99",
-            "image": "images/res_img_4.jpg"
-          },
-          {
-            "title": "Sausages from Italy",
-            "description": "Far far away, behind the word mountains.",
-            "price": "$12.99",
-            "image": "images/res_img_2.jpg"
-          },
-          {
-            "title": "Beef Grilled",
-            "description": "Far far away, behind the word mountains.",
-            "price": "$12.99",
-            "image": "images/res_img_8.jpg"
-          }
+          { "title": "Dana Bonfile", "description": "Kömürde mühürlenmiş, köz sebzeler eşliğinde.", "price": "₺320", "image": "images/res_img_3.jpg" },
+          { "title": "Domatesli Tavuk", "description": "Fırın domates sosu ve taze fesleğen ile.", "price": "₺210", "image": "images/res_img_4.jpg" },
+          { "title": "İtalyan Sucuk", "description": "Baharatlı dana sucuk, soğan ve biber ile.", "price": "₺195", "image": "images/res_img_2.jpg" },
+          { "title": "Izgara Et Tabağı", "description": "Çeşitli etler ve sos eşlikçileriyle paylaşım tabağı.", "price": "₺340", "image": "images/res_img_8.jpg" }
         ]
       },
       {
-        "title": "Smoothies",
+        "title": "Smoothie",
         "style": "fh5co-drinks",
         "items": [
-          {
-            "title": "Berry Splash",
-            "description": "Strawberry, raspberry and mint blended with coconut milk.",
-            "price": "$9.50",
-            "image": "images/res_img_5.jpg"
-          },
-          {
-            "title": "Tropical Detox",
-            "description": "Pineapple, cucumber, kale and chia seeds.",
-            "price": "$10.50",
-            "image": "images/res_img_6.jpg"
-          },
-          {
-            "title": "Cocoa Protein",
-            "description": "Cacao nibs, banana and almond butter.",
-            "price": "$11.00",
-            "image": "images/res_img_7.jpg"
-          },
-          {
-            "title": "Violet Velvet",
-            "description": "Blueberry, lavender syrup and oat milk.",
-            "price": "$10.25",
-            "image": "images/res_img_5.jpg"
-          }
+          { "title": "Orman Meyveli", "description": "Çilek, frambuaz, nane ve hindistan cevizi sütü.", "price": "₺145", "image": "images/res_img_5.jpg" },
+          { "title": "Tropik Detox", "description": "Ananas, salatalık, kale ve chia tohumu.", "price": "₺155", "image": "images/res_img_6.jpg" },
+          { "title": "Kakao Protein", "description": "Kakao nibs, muz ve badem ezmesi ile yüksek protein.", "price": "₺165", "image": "images/res_img_7.jpg" },
+          { "title": "Lavanta Yabanmersini", "description": "Yabanmersini, lavanta şurubu ve yulaf sütü.", "price": "₺160", "image": "images/res_img_5.jpg" }
         ]
       },
       {
-        "title": "Chef Specials",
+        "title": "Şef Önerileri",
         "style": "fh5co-dishes",
         "items": [
-          {
-            "title": "Organic Egg",
-            "description": "Soft boiled organic egg with miso butter toast.",
-            "price": "$4.99",
-            "image": "images/res_img_7.jpg"
-          },
-          {
-            "title": "Salad with Crispy Chicken",
-            "description": "Local greens, honey mustard dressing and sesame seeds.",
-            "price": "$8.50",
-            "image": "images/res_img_6.jpg"
-          },
-          {
-            "title": "Tomato Soup with Chicken",
-            "description": "Slow roasted tomato broth finished with basil oil.",
-            "price": "$12.99",
-            "image": "images/res_img_3.jpg"
-          },
-          {
-            "title": "Cheese and Garlic Toast",
-            "description": "House sourdough, roasted garlic butter and parmesan.",
-            "price": "$4.50",
-            "image": "images/res_img_8.jpg"
-          }
+          { "title": "Organik Yumurta", "description": "Misolu tereyağlı kızarmış ekmekle rafadan yumurta.", "price": "₺95", "image": "images/res_img_7.jpg" },
+          { "title": "Çıtır Tavuklu Salata", "description": "Mevsim yeşillikleri, bal-hardal sos ve susam.", "price": "₺190", "image": "images/res_img_6.jpg" },
+          { "title": "Tavuklu Domates Çorbası", "description": "Yavaş kavrulmuş domates suyu, fesleğen yağı dokunuşu.", "price": "₺175", "image": "images/res_img_3.jpg" },
+          { "title": "Peynirli Sarımsaklı Ekmek", "description": "Ev ekmeği, sarımsaklı tereyağı ve parmesan.", "price": "₺110", "image": "images/res_img_8.jpg" }
         ]
       }
     ],
-    "cta": { "label": "More Food Menu", "url": "#" }
+    "cta": { "label": "Daha Fazla Menü", "url": "#" }
   },
-  "events": {
-    "title": "Upcoming Events",
-    "subtitle": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+  "events": {},
+  "contact": {
+    "title": "Rezervasyon / İletişim",
+    "subtitle": "Soslarımız hakkında bilgi, toplu sipariş veya iş birliği için bize ulaşın.",
+    "addressHtml": "Örnek Mah. Lezzet Sok. No:12<br>İstanbul",
+    "phone": { "label": "+90 212 555 12 12", "value": "+902125551212" },
+    "email": "info@soos.com",
+    "website": { "label": "soos.com", "url": "https://soos.com" },
+    "buttonLabel": "Mesaj Gönder"
+  },
+  "products": {
+    "title": "Sos Menüsü",
+    "subtitle": "Öne çıkan soslarımız",
     "items": [
-      {
-        "title": "Kitchen Workshops",
-        "date": "March 19th, 2016",
-        "description": "Hands-on cooking classes with our chef to master seasonal plates.",
-        "link": { "label": "Read More", "url": "#" }
-      },
-      {
-        "title": "Music Concerts",
-        "date": "April 2nd, 2016",
-        "description": "Live acoustic night featuring local artists and curated tasting menu.",
-        "link": { "label": "Reserve Seat", "url": "#" }
-      },
-      {
-        "title": "Free to Eat Party",
-        "date": "April 23rd, 2016",
-        "description": "Community dinner that highlights produce from nearby farms.",
-        "link": { "label": "Join the List", "url": "#" }
-      }
+      { "id": "truf-mayo", "title": "Trüf Mayonez", "price": "₺95", "description": "Yoğun trüf aromalı, patates ve burger için imza sos.", "image": "images/res_img_1.jpg", "features": ["Trüf yağı", "Kremamsı doku", "Patates/burger uyumu"] },
+      { "id": "biber-sos", "title": "Izgara Biber Sos", "price": "₺85", "description": "Tütsülenmiş kapya biber, hafif acı ve tatlı dengesi.", "image": "images/res_img_2.jpg", "features": ["Köz kapya", "Hafif acı", "Izgara et uyumu"] },
+      { "id": "parmesan-dip", "title": "Parmesan Sarımsaklı Dip", "price": "₺75", "description": "Parmesan, sarımsak ve hafif limon kabuğu ile kremamsı dip.", "image": "images/res_img_8.jpg", "features": ["Parmesan", "Sarımsak", "Kremamsı yapı"] },
+      { "id": "pesto", "title": "Fesleğenli Pesto", "price": "₺80", "description": "Taze fesleğen, çam fıstığı ve zeytinyağı ile klasik pesto.", "image": "images/res_img_7.jpg", "features": ["Taze fesleğen", "Çam fıstığı", "Zeytinyağı"] },
+      { "id": "yogurt-tahin", "title": "Yoğurtlu Tahin", "price": "₺70", "description": "Kavrulmuş susam tahini ve süzme yoğurt ile hafif, dengeli sos.", "image": "images/res_img_6.jpg", "features": ["Tahin", "Süzme yoğurt", "Dengeli tat"] }
     ]
   },
-  "contact": {
-    "title": "Reserve a Table",
-    "subtitle": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    "addressHtml": "5555 Love Paradise 56 New Clity 5655, <br>Excel Tower United Kingdom",
-    "phone": { "label": "(123) 465-6789", "value": "+441234656789" },
-    "email": "info@freehtml5.co",
-    "website": { "label": "freehtml5.co", "url": "http://freehtml5.co/" },
-    "buttonLabel": "Send Message"
-  }
+  "announcements": [
+    { "id": "summer-sauces", "title": "Yaz Sos Serisi", "summary": "Mevsimlik malzemelerle hazırlanan yeni sos serimiz yayında.", "body": "<p>Soğuk dipler, ferahlatıcı soslar ve ızgaraya özel marine seçenekleri.</p>", "date": "2025-06-01", "attachments": [ { "type": "pdf", "label": "Yaz Sosları PDF", "url": "docs/summer-sauces.pdf" } ], "image": "images/soslar.jpeg" },
+    { "id": "chef-workshop", "title": "Şef ile Sos Atölyesi", "summary": "Sadece sos teknikleri ve reçeteleri odaklı mini atölye.", "body": "<p>Emülsiyon, fermente soslar ve eşleştirme ipuçları. Katılımcı sayısı sınırlıdır.</p>", "date": "2025-06-05", "attachments": [ { "type": "doc", "label": "Atölye Akışı", "url": "docs/chef-workshop.docx" } ] },
+    { "id": "spicy-week", "title": "Acı Sevenler Haftası", "summary": "Chili Lime ve Izgara Biber soslarında özel kampanya.", "body": "<p>Acı soslarımızda %15 indirim ve tadım seti hediyesi.</p>", "date": "2025-06-08", "attachments": [] },
+    { "id": "bundle-offer", "title": "3'lü Sos Paketi", "summary": "Trüf Mayonez, Parmesan Dip ve Pesto birlikte avantajlı.", "body": "<p>3'lü paket alımında kargo ücretsiz, stoklarla sınırlı.</p>", "date": "2025-06-12", "attachments": [ { "type": "pdf", "label": "Paket Detayı", "url": "docs/bundle.pdf" } ] },
+    { "id": "new-partner", "title": "Yeni İş Ortağı: Kadıköy", "summary": "Kadıköy'deki yeni partner kafe menüsüne soslarımız eklendi.", "body": "<p>Trüf Mayonez ve Yoğurtlu Tahin artık yerinde servis ediliyor.</p>", "date": "2025-06-20", "attachments": [] },
+    { "id": "return-bottles", "title": "Şişe İadesi Kampanyası", "summary": "Boş sos şişelerini getir, %10 indirim kazan.", "body": "<p>Temizlenmiş boş şişelerinizi mağazaya getirerek sonraki alışverişinizde indirim alın. Kampanya ay sonuna kadar geçerli.</p>", "date": "2025-06-25", "attachments": [] }
+  ]
 }
 

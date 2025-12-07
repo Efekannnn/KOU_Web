@@ -17,7 +17,7 @@ body.fh5co-overflow {
 }
 
 a {
-  color: #fb6e14;
+  color: #f35f55;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -63,9 +63,9 @@ p {
 }
 
 .btn-primary {
-  background: #fb6e14;
+  background: #f35f55;
   color: #fff;
-  border: 2px solid #fb6e14;
+  border: 2px solid #f35f55;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   background: #f16104 !important;
@@ -73,11 +73,11 @@ p {
 }
 .btn-primary.btn-outline {
   background: transparent;
-  color: #fb6e14;
-  border: 2px solid #fb6e14;
+  color: #f35f55;
+  border: 2px solid #f35f55;
 }
 .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
-  background: #fb6e14;
+  background: #f35f55;
   color: #fff;
 }
 
@@ -182,7 +182,7 @@ p {
 .form-control:active, .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: #fb6e14;
+  border-color: #f35f55;
 }
 
 /*
@@ -246,11 +246,12 @@ p {
   text-transform: none;
 }
 #fh5co-home .flexslider .fh5co-text h2 a {
-  color: #fb6e14;
+  color: #f35f55;
 }
 #fh5co-home .flexslider .slides li {
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center 60%;
 }
 #fh5co-home .flexslider .fh5co-overlay {
   position: absolute;
@@ -302,7 +303,7 @@ p {
 .fh5co-main-nav .fh5co-menu-2 a,
 .fh5co-main-nav .fh5co-logo a {
   padding: 35px 10px;
-  color: #130d08;
+  color: #f35f55;
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
@@ -318,10 +319,60 @@ p {
   outline: none;
   text-decoration: none;
 }
+.fh5co-main-nav .nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.fh5co-main-nav .nav-dropdown > a {
+  padding-right: 26px;
+}
+.fh5co-main-nav .nav-dropdown-menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  min-width: 190px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border: 1px solid #efefef;
+  border-radius: 6px;
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.2s ease;
+  z-index: 999;
+  text-align: left;
+}
+.fh5co-main-nav .nav-dropdown:hover .nav-dropdown-menu,
+.fh5co-main-nav .nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.fh5co-main-nav .nav-dropdown-menu a {
+  display: block;
+  padding: 10px 16px;
+  color: #130d08;
+  white-space: nowrap;
+}
+.fh5co-main-nav .nav-dropdown-menu a:hover {
+  background: #f7f7f7;
+  color: #f35f55;
+  text-decoration: none;
+}
+.fh5co-main-nav .nav-dropdown .caret {
+  border-top: 4px solid #130d08;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  display: inline-block;
+  margin-left: 6px;
+  position: relative;
+  top: -1px;
+}
 .fh5co-main-nav .fh5co-menu-1 a.active,
 .fh5co-main-nav .fh5co-menu-2 a.active,
 .fh5co-main-nav .fh5co-logo a.active {
-  color: #fb6e14;
+  color: #f35f55;
 }
 .fh5co-main-nav .fh5co-menu-1 {
   text-align: right;
@@ -367,7 +418,7 @@ p {
   width: 40px;
   height: 2px;
   left: 50%;
-  background: #fb6e14;
+  background: #f35f55;
   margin-left: -20px;
 }
 .fh5co-heading .sub-heading {
@@ -430,7 +481,7 @@ p {
   width: 40px;
   height: 2px;
   left: 50%;
-  background: #fb6e14;
+  background: #f35f55;
   margin-left: -20px;
 }
 #fh5co-about .fh5co-text p {
@@ -533,7 +584,7 @@ p {
   position: relative;
   background: transparent;
   box-shadow: none;
-  border: 2px solid #fb6e14;
+  border: 2px solid #f35f55;
 }
 
 #fh5co-featured {
@@ -595,7 +646,7 @@ p {
   height: 2px;
   left: 50%;
   margin-left: -20px;
-  background: #fb6e14;
+  background: #f35f55;
 }
 #fh5co-featured .fh5co-grid .arrow-left:before, #fh5co-featured .fh5co-grid .arrow-left::before {
   content: "";
@@ -879,7 +930,7 @@ p {
   width: 20%;
   text-align: right;
   font-size: 20px;
-  color: #fb6e14;
+  color: #f35f55;
 }
 
 #fh5co-events {
@@ -960,7 +1011,7 @@ p {
 }
 #fh5co-events .fh5co-event .fh5co-event-meta:after, #fh5co-events .fh5co-event .fh5co-event-meta::after {
   background: #bfbfbf;
-  background: #fb6e14;
+  background: #f35f55;
   content: "";
   position: absolute;
   left: 50%;
@@ -1128,10 +1179,10 @@ p {
 #fh5co-offcanvas a:hover, #fh5co-offcanvas a:focus, #fh5co-offcanvas a:active {
   outline: none;
   text-decoration: none;
-  color: #fb6e14;
+  color: #f35f55;
 }
 #fh5co-offcanvas a.active {
-  color: #fb6e14;
+  color: #f35f55;
 }
 @media screen and (max-width: 768px) {
   #fh5co-offcanvas {
@@ -1355,3 +1406,13 @@ p {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/* Announcement animations */
+.ann-anim {
+  opacity: 0;
+  animation: annFade 0.65s ease forwards;
+}
+@keyframes annFade {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -193,44 +193,159 @@ const renderMenu = (menu = {}) => {
 	}
 };
 
-const renderEvents = (events = {}) => {
-	const headingEl = document.getElementById('events-heading');
-	if (headingEl && events.title) {
-		headingEl.textContent = events.title;
+const renderEvents = () => {
+	// Etkinlik bölümü statik istatistik kartları gösteriyor; dinamik veri gerekmiyor.
+};
+
+const renderProducts = (products = {}) => {
+	console.log('renderProducts çağrıldı:', products);
+	
+	// Başlık ve alt başlık
+	const headingEl = document.getElementById('products-heading');
+	if (headingEl && products.title) {
+		headingEl.textContent = products.title;
 	}
 
-	const subheadingEl = document.getElementById('events-subheading');
-	if (subheadingEl && events.subtitle) {
-		subheadingEl.textContent = events.subtitle;
+	const subheadingEl = document.getElementById('products-subheading');
+	if (subheadingEl && products.subtitle) {
+		subheadingEl.textContent = products.subtitle;
 	}
 
-	const listEl = document.getElementById('events-list');
-	const template = document.getElementById('event-card-template');
-	if (listEl && template && Array.isArray(events.items)) {
-		listEl.innerHTML = '';
-		events.items.forEach((event) => {
-			const fragment = template.content.cloneNode(true);
-			const titleEl = fragment.querySelector('.event-title');
-			const dateEl = fragment.querySelector('.event-date');
-			const descEl = fragment.querySelector('.event-description');
-			const linkEl = fragment.querySelector('.event-link');
+	// Swiper slides container
+	const slidesContainer = document.getElementById('product-slides');
+	if (!slidesContainer || !Array.isArray(products.items)) return;
 
-			if (titleEl && event.title) {
-				titleEl.textContent = event.title;
-			}
-			if (dateEl && event.date) {
-				dateEl.textContent = event.date;
-			}
-			if (descEl && event.description) {
-				descEl.textContent = event.description;
-			}
-			if (linkEl && event.link) {
-				linkEl.textContent = event.link.label || linkEl.textContent;
-				linkEl.href = event.link.url || '#';
-			}
+	// Slide'ları oluştur
+	slidesContainer.innerHTML = '';
+	products.items.forEach((product) => {
+		const slide = document.createElement('div');
+		slide.className = 'swiper-slide';
+		slide.innerHTML = `
+			<div class="product-slide">
+				<div class="product-slide-image" style="background-image: url('${product.image}')"></div>
+				<div class="product-slide-content">
+					<h3>${product.title}</h3>
+					<div class="product-price">${product.price}</div>
+					<p>${product.description}</p>
+					<a href="product-detail.html?id=${product.id}" class="btn-details">View Details</a>
+				</div>
+			</div>
+		`;
+		slidesContainer.appendChild(slide);
+	});
 
-			listEl.appendChild(fragment);
+	// Swiper'ı başlat
+	if (typeof Swiper !== 'undefined') {
+		new Swiper('.product-swiper', {
+			slidesPerView: 1,
+			spaceBetween: 30,
+			loop: true,
+			autoplay: {
+				delay: 4000,
+				disableOnInteraction: false,
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			breakpoints: {
+				640: {
+					slidesPerView: 2,
+				},
+				1024: {
+					slidesPerView: 3,
+				},
+			},
 		});
+		console.log('Product Swiper başlatıldı.');
+	}
+};
+
+const openAnnouncementModal = (announcement) => {
+	if (!announcement) return;
+	const modalTitle = document.getElementById('announcementModalLabel');
+	const modalDate = document.getElementById('announcementModalDate');
+	const modalBody = document.getElementById('announcementModalBody');
+	const modalImage = document.getElementById('announcementModalImage');
+	const modalAttachWrap = document.getElementById('announcementModalAttachments');
+	const modalAttachList = document.getElementById('announcementModalAttachmentList');
+
+	if (modalTitle) modalTitle.textContent = announcement.title || 'Duyuru';
+	if (modalDate) modalDate.textContent = announcement.date || '';
+	if (modalBody) modalBody.innerHTML = announcement.body || '';
+
+	if (modalImage) {
+		if (announcement.image) {
+			modalImage.style.display = 'block';
+			modalImage.style.backgroundImage = `url('${announcement.image}')`;
+		} else {
+			modalImage.style.display = 'none';
+		}
+	}
+
+	if (modalAttachWrap && modalAttachList) {
+		if (Array.isArray(announcement.attachments) && announcement.attachments.length) {
+			modalAttachList.innerHTML = '';
+			announcement.attachments.forEach((att) => {
+				const li = document.createElement('li');
+				li.innerHTML = `<a href="${att.url}" target="_blank">${att.label || att.url} (${att.type || ''})</a>`;
+				modalAttachList.appendChild(li);
+			});
+			modalAttachWrap.style.display = 'block';
+		} else {
+			modalAttachWrap.style.display = 'none';
+		}
+	}
+
+	if (typeof $ !== 'undefined' && $('#announcementModal').modal) {
+		$('#announcementModal').modal('show');
+	}
+};
+
+const renderAnnouncements = (ann = {}) => {
+	const listEl = document.getElementById('announcement-list');
+	if (!listEl) return;
+
+	// Hem dizi hem { items: [] } yapısını destekle
+	const items = Array.isArray(ann) ? ann : Array.isArray(ann.items) ? ann.items : [];
+	if (!items.length) {
+		listEl.innerHTML = '<div class="col-md-12"><p>Şu an duyuru bulunmuyor.</p></div>';
+		const moreBtn = document.getElementById('announcements-more');
+		if (moreBtn) moreBtn.style.display = 'none';
+		return;
+	}
+
+	// En yeni -> eski
+	const sorted = [...items].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+	const firstFive = sorted.slice(0, 5);
+
+	listEl.innerHTML = '';
+	firstFive.forEach((item, idx) => {
+		const col = document.createElement('div');
+		col.className = 'col-md-4 col-sm-6 ann-anim';
+		col.style.animationDelay = `${0.08 * idx + 0.05}s`;
+		col.innerHTML = `
+			<div class="fh5co-event" style="cursor:pointer;">
+				<h3>${item.title}</h3>
+				<span class="fh5co-event-meta">${item.date || ''}</span>
+				<p>${item.summary || ''}</p>
+				<p><a href="#" class="btn-details-ann">Detay</a></p>
+			</div>
+		`;
+		col.onclick = (e) => {
+			e.preventDefault();
+			openAnnouncementModal(item);
+		};
+		listEl.appendChild(col);
+	});
+
+	const moreBtn = document.getElementById('announcements-more');
+	if (moreBtn) {
+		moreBtn.style.display = sorted.length ? 'inline-block' : 'none';
 	}
 };
 
@@ -283,6 +398,8 @@ const renderSite = (content) => {
 	renderSiteMeta(content.site);
 	renderHero(content.hero);
 	renderAbout(content.about);
+	renderAnnouncements(content.announcements);
+	renderProducts(content.products);
 	renderQuotes(content.quotes);
 	renderMenu(content.menu);
 	renderEvents(content.events);

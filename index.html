@@ -6,11 +6,11 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Foodee &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+	<title>Soos &mdash; Soslar ve Özel Tatlar</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FREEHTML5.CO" />
+	<meta name="description" content="Soos — özel soslar, eşlikçiler ve lezzetli menüler." />
+	<meta name="keywords" content="sos, dip, eşlikçi, gurme, restoran" />
+	<meta name="author" content="Efekan" />
 
   <!-- 
 	//////////////////////////////////////////////////////
@@ -57,6 +57,278 @@
 
 	<link rel="stylesheet" href="css/style.css">
 
+	<!-- Swiper CSS -->
+	<link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+	<!-- Product Slider Styles -->
+	<style>
+		#fh5co-products {
+			padding: 5px 0 60px;
+			margin-top: 0;
+			background:
+				linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.08)),
+				url('images/wood_1.png');
+			background-position: center center;
+			background-size: 420px 420px;
+			background-repeat: repeat;
+			background-color: #2a2a2a;
+		}
+		#fh5co-products .heading {
+			font-family: 'Playfair Display', serif;
+		}
+		#fh5co-products .fh5co-heading {
+			padding-top: 5px;
+		}
+		.product-swiper {
+			padding: 20px 0 60px;
+			overflow: visible;
+			opacity: 1 !important; /* animation beklemesin */
+		}
+		.product-swiper .swiper-wrapper {
+			display: flex !important;
+		}
+		.product-swiper .swiper-slide {
+			flex-shrink: 0;
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+		.product-slide {
+			background: #2d2d2d;
+			color: #f5f5f5;
+			border-radius: 14px;
+			overflow: hidden;
+			box-shadow: 0 6px 28px rgba(0,0,0,0.25);
+			transition: transform 0.3s ease;
+			padding: 16px;
+		}
+		.product-slide:hover {
+			transform: translateY(-5px);
+		}
+		.product-slide-image {
+			width: 100%;
+			height: 340px;
+			background-size: cover;
+			background-position: center;
+			background-color: #eee;
+		}
+		.product-slide-content {
+			padding: 26px 26px 30px;
+		}
+		.product-slide-content h3 {
+			font-family: 'Playfair Display', serif;
+			font-size: 24px;
+			margin: 0 0 10px;
+			color: #fff;
+		}
+		.product-slide-content .product-price {
+			font-size: 22px;
+			color: #f35f55;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		.product-slide-content p {
+			font-size: 14px;
+			color: #e0e0e0;
+			line-height: 1.6;
+			margin-bottom: 18px;
+		}
+		.product-slide-content .btn-details {
+			display: inline-block;
+			padding: 10px 25px;
+			background: #f35f55;
+			color: #fff;
+			border-radius: 25px;
+			text-decoration: none;
+			font-size: 13px;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			transition: background 0.3s ease;
+		}
+		.product-slide-content .btn-details:hover {
+			background: #d94d44;
+			color: #fff;
+		}
+		/* Announcement button, slider stiliyle uyumlu */
+		.btn-details-ann {
+			display: inline-block;
+			padding: 10px 25px;
+			background: #f35f55;
+			color: #fff;
+			border-radius: 25px;
+			text-decoration: none;
+			font-size: 13px;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			border: none;
+			transition: background 0.3s ease;
+		}
+		.btn-details-ann:hover {
+			background: #d94d44;
+			color: #fff;
+			text-decoration: none;
+		}
+		/* Swiper Navigation & Pagination */
+		.product-swiper .swiper-button-next,
+		.product-swiper .swiper-button-prev {
+			color: #f35f55;
+			background: #fff;
+			width: 45px;
+			height: 45px;
+			border-radius: 50%;
+			box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+		}
+		.product-swiper .swiper-button-next:after,
+		.product-swiper .swiper-button-prev:after {
+			font-size: 18px;
+		}
+		.product-swiper .swiper-pagination-bullet {
+			background: #f35f55;
+			opacity: 0.4;
+		}
+		.product-swiper .swiper-pagination-bullet-active {
+			opacity: 1;
+		}
+		/* Announcements */
+		#fh5co-announcements {
+			margin-top: 0;
+			padding: 50px 0 60px;
+			background: #f7f7f9;
+		}
+		#fh5co-announcements .fh5co-event {
+			position: relative;
+			min-height: 220px;
+			height: 100%;
+			margin-bottom: 20px;
+			background: #ffffff;
+			color: #1f1f1f;
+			box-shadow: 0 10px 32px rgba(0,0,0,0.08);
+			border: 1px solid #ececf0;
+			border-radius: 14px;
+			padding: 20px 22px 18px;
+			transition: transform 0.2s ease, box-shadow 0.2s ease;
+			overflow: hidden;
+		}
+		#fh5co-announcements .fh5co-event:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 6px;
+			background: #f35f55;
+		}
+		#fh5co-announcements .fh5co-event:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 16px 38px rgba(0,0,0,0.12);
+		}
+		#fh5co-announcements .fh5co-event h3 {
+			color: #1d1d1d;
+			font-size: 20px;
+			margin-top: 10px;
+		}
+		#fh5co-announcements .fh5co-event .fh5co-event-meta {
+			display: inline-block;
+			padding: 6px 10px;
+			border-radius: 999px;
+			background: #fff3f0;
+			color: #f35f55;
+			font-weight: 600;
+			font-size: 12px;
+			margin: 8px 0 10px;
+		}
+		#fh5co-announcements .fh5co-event p {
+			color: #4b4b4b;
+			margin-bottom: 12px;
+		}
+		#announcement-list .col-md-4,
+		#announcement-list .col-sm-6 {
+			margin-bottom: 20px;
+		}
+		/* Map embed */
+		.map-embed {
+			border-radius: 12px;
+			overflow: hidden;
+			box-shadow: 0 10px 32px rgba(0,0,0,0.16);
+			height: 380px;
+			margin-top: 10px;
+		}
+		.map-embed iframe {
+			width: 100%;
+			height: 100%;
+			border: 0;
+		}
+		/* Header dropdowns */
+		.fh5co-main-nav .nav-dropdown {
+			position: relative;
+			display: inline-block;
+		}
+		.fh5co-main-nav .nav-dropdown > a {
+			padding-right: 26px;
+		}
+		.fh5co-main-nav .nav-dropdown-menu {
+			position: absolute;
+			left: 0;
+			top: 100%;
+			min-width: 190px;
+			background: #fff;
+			box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+			border: 1px solid #efefef;
+			border-radius: 6px;
+			padding: 8px 0;
+			opacity: 0;
+			visibility: hidden;
+			transform: translateY(10px);
+			transition: all .2s ease;
+			z-index: 999;
+			text-align: left;
+		}
+		.fh5co-main-nav .nav-dropdown:hover .nav-dropdown-menu,
+		.fh5co-main-nav .nav-dropdown:focus-within .nav-dropdown-menu {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0);
+		}
+		.fh5co-main-nav .nav-dropdown-menu a {
+			display: block;
+			padding: 10px 16px;
+			color: #130d08;
+			white-space: nowrap;
+		}
+		.fh5co-main-nav .nav-dropdown-menu a:hover {
+			background: #f7f7f7;
+			color: #fb6e14;
+			text-decoration: none;
+		}
+		.fh5co-main-nav .nav-dropdown .caret {
+			border-top: 4px solid #130d08;
+			border-left: 4px solid transparent;
+			border-right: 4px solid transparent;
+			display: inline-block;
+			margin-left: 6px;
+			position: relative;
+			top: -1px;
+		}
+		/* Feedback form */
+		.feedback-card {
+			background: #ffffff;
+			border: 1px solid #ececf0;
+			border-radius: 12px;
+			box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+			padding: 24px;
+			margin-top: 20px;
+		}
+		.feedback-card h3 {
+			margin-top: 0;
+			margin-bottom: 8px;
+		}
+		.feedback-card .help-text {
+			color: #666;
+			margin-bottom: 16px;
+		}
+	</style>
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
@@ -74,17 +346,37 @@
 			<div class="fh5co-main-nav">
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
-						<a href="#" data-nav-section="home" data-nav-label="Home">Home</a>
-						<a href="#" data-nav-section="about" data-nav-label="About">About</a>
-						<a href="#" data-nav-section="features" data-nav-label="Features">Features</a>
+						<a href="#" data-nav-section="home" data-nav-label="Ana Sayfa">Ana Sayfa</a>
+						<div class="nav-dropdown">
+							<a href="#" data-nav-section="products" data-nav-label="Ürünlerimiz">Ürünlerimiz <span class="caret"></span></a>
+							<div class="nav-dropdown-menu">
+								<a href="index.html#fh5co-products" class="external">Öne Çıkan Ürünler</a>
+								<a href="#" data-nav-section="features" data-nav-label="Sos Menü">Sos Menü</a>
+								<a href="#" data-nav-section="events" data-nav-label="Etkinlikler">Özel Etkinlikler</a>
+							</div>
+						</div>
+						<div class="nav-dropdown">
+							<a href="announcements.html" class="external">Birimlerimiz <span class="caret"></span></a>
+							<div class="nav-dropdown-menu">
+								<a href="announcements.html#merkez" class="external">Merkez Ofis</a>
+								<a href="announcements.html#sube-1" class="external">Kadıköy</a>
+								<a href="announcements.html#sube-2" class="external">Beyoğlu</a>
+							</div>
+						</div>
 					</div>
 					<div class="fh5co-logo">
-						<a href="index.html" data-brand>foodee</a>
+						<a href="index.html" data-brand>soos</a>
 					</div>
 					<div class="fh5co-menu-2">
-						<a href="#" data-nav-section="menu" data-nav-label="Menu">Menu</a>
-						<a href="#" data-nav-section="events" data-nav-label="Events">Events</a>
-						<a href="#" data-nav-section="reservation" data-nav-label="Reservation">Reservation</a>
+						<a href="#" data-nav-section="about" data-nav-label="Hakkımızda">Hakkımızda</a>
+						<a href="announcements.html" class="external" data-nav-label="Duyurular">Duyurular</a>
+						<div class="nav-dropdown">
+							<a href="#" data-nav-section="reservation" data-nav-label="İletişim">İletişim <span class="caret"></span></a>
+							<div class="nav-dropdown-menu">
+								<a href="#" data-nav-section="reservation" data-nav-label="İletişim">İletişim</a>
+								<a href="feedback.html" class="external">Şikayet / Öneri</a>
+							</div>
+						</div>
 					</div>
 				</div>
 				
@@ -99,8 +391,8 @@
 				<div class="fh5co-text">
 					<div class="container">
 						<div class="row">
-							<h1 class="to-animate" id="hero-title">foodee</h1>
-							<h2 class="to-animate" id="hero-subtitle">Lovely Designed <span>by</span> <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
+							<h1 class="to-animate" id="hero-title">soos</h1>
+							<h2 class="to-animate" id="hero-subtitle">Designed by Efekan</h2>
 						</div>
 					</div>
 				</div>
@@ -115,11 +407,58 @@
 		<div id="fh5co-about" data-section="about">
 			<div class="fh5co-2col fh5co-bg to-animate-2" id="about-image" style="background-image: url(images/res_img_1.jpg)"></div>
 			<div class="fh5co-2col fh5co-text">
-				<h2 class="heading to-animate" id="about-heading">About Us</h2>
-				<p class="to-animate" id="about-description"><span class="firstcharacter">F</span>ar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.</p>
-				<p class="text-center to-animate"><a href="#" class="btn btn-primary btn-outline" id="about-cta">Get in touch</a></p>
+				<h2 class="heading to-animate" id="about-heading">Hakkımızda</h2>
+				<p class="to-animate" id="about-description"></p>
+				<p class="text-center to-animate"><a href="#" class="btn btn-primary btn-outline" id="about-cta" style="display:none;"></a></p>
 			</div>
 	</div>
+
+		<!-- Product Slider Section -->
+		<div id="fh5co-products" data-section="products">
+			<div class="container">
+				<div class="row text-center fh5co-heading row-padded">
+					<div class="col-md-8 col-md-offset-2">
+						<h2 class="heading" id="products-heading" style="color:#f35f55; font-size: 42px; margin:0;">Sos Menüsü</h2>
+						<p class="sub-heading" id="products-subheading" style="color:#f5f5f5;">Öne çıkan soslarımız</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<!-- Swiper -->
+						<div class="swiper product-swiper">
+							<div class="swiper-wrapper" id="product-slides">
+								<!-- Slides generated via JS -->
+							</div>
+							<!-- Pagination -->
+							<div class="swiper-pagination"></div>
+							<!-- Navigation -->
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Announcements Section -->
+		<div id="fh5co-announcements" data-section="announcements" style="background:#f8f8f8; padding:80px 0;">
+			<div class="container">
+				<div class="row text-center fh5co-heading row-padded" style="margin-bottom: 15px;">
+					<div class="col-md-8 col-md-offset-2">
+						<h2 class="heading" id="announcements-heading" style="color:#f35f55; font-size: 42px; margin:0;">Duyurular</h2>
+						<p class="sub-heading" id="announcements-subheading" style="color:#5f5f5f;">Güncel duyuru, fırsat ve kampanyalar</p>
+					</div>
+				</div>
+				<div class="row" id="announcement-list">
+					<!-- Duyurular JS ile doldurulacak -->
+				</div>
+				<div class="row" style="margin-top:30px;">
+					<div class="col-md-4 col-md-offset-4 text-center">
+						<a href="announcements.html" class="btn btn-primary btn-outline" id="announcements-more">Daha Fazla</a>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<div id="fh5co-sayings">
 			<div class="container">
@@ -139,8 +478,8 @@
 			<div class="container">
 				<div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2">
-						<h2 class="heading to-animate">Featured Dishes</h2>
-						<p class="sub-heading to-animate">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<h2 class="heading to-animate">Sos Menüsü</h2>
+						<p class="sub-heading to-animate">6-7 özel sos: dip, salata ve ana yemek eşlikçileri.</p>
 					</div>
 				</div>
 				<div class="row">
@@ -148,26 +487,26 @@
 						<div class="fh5co-v-half to-animate-2">
 							<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_1.jpg)"></div>
 							<div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
-								<h2>Fresh Mushrooms</h2>
-								<span class="pricing">$7.50</span>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+								<h2>Trüf Mayonez</h2>
+								<span class="pricing">₺95</span>
+								<p>Yoğun trüf aromalı, patates ve burger için imza sos.</p>
 							</div>
 						</div>
 						<div class="fh5co-v-half">
 							<div class="fh5co-h-row-2 to-animate-2">
 								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_2.jpg)"></div>
 								<div class="fh5co-v-col-2 fh5co-text arrow-left">
-									<h2>Grilled Chiken Salad</h2>
-									<span class="pricing">$12.00</span>
-									<p>Far far away, behind the word mountains.</p>
+									<h2>Izgara Biber Sos</h2>
+									<span class="pricing">₺85</span>
+									<p>Tütsülenmiş kapya biber, hafif acı ve tatlı dengesi.</p>
 								</div>
 							</div>
 							<div class="fh5co-h-row-2 fh5co-reversed to-animate-2">
 								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_8.jpg)"></div>
 								<div class="fh5co-v-col-2 fh5co-text arrow-right">
-									<h2>Cheese and Garlic Toast</h2>
-									<span class="pricing">$4.50</span>
-									<p>Far far away, behind the word mountains.</p>
+									<h2>Parmesan Sarımsaklı Dip</h2>
+									<span class="pricing">₺75</span>
+									<p>Parmesan, sarımsak ve hafif limon kabuğu ile kremamsı dip.</p>
 								</div>
 							</div>
 						</div>
@@ -176,26 +515,26 @@
 							<div class="fh5co-h-row-2 fh5co-reversed to-animate-2">
 								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_7.jpg)"></div>
 								<div class="fh5co-v-col-2 fh5co-text arrow-right">
-									<h2>Organic Egg</h2>
-									<span class="pricing">$4.99</span>
-									<p>Far far away, behind the word mountains.</p>
+									<h2>Fesleğenli Pesto</h2>
+									<span class="pricing">₺80</span>
+									<p>Taze fesleğen, çam fıstığı ve zeytinyağı ile klasik pesto.</p>
 								</div>
 							</div>
 							<div class="fh5co-h-row-2 to-animate-2">
 								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_6.jpg)"></div>
 								<div class="fh5co-v-col-2 fh5co-text arrow-left">
-									<h2>Salad with Crispy Chicken</h2>
-									<span class="pricing">$8.50</span>
-									<p>Far far away, behind the word mountains.</p>
+									<h2>Yoğurtlu Tahin</h2>
+									<span class="pricing">₺70</span>
+									<p>Kavrulmuş susam tahini ve süzme yoğurt ile hafif, dengeli.</p>
 								</div>
 							</div>
 						</div>
 						<div class="fh5co-v-half to-animate-2">
 							<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_3.jpg)"></div>
 							<div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
-								<h2>Tomato Soup with Chicken</h2>
-								<span class="pricing">$12.99</span>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+								<h2>Acı Chili Lime</h2>
+								<span class="pricing">₺85</span>
+								<p>Acı biber, misket limonu ve kişniş ile canlı, ferah bir sos.</p>
 							</div>
 						</div>
 
@@ -211,62 +550,86 @@
 				<div class="row">
 					<div class="col-md-3 to-animate">
 						<div class="fh5co-type">
-							<h3 class="with-icon icon-1">Fruits</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<h3 class="with-icon icon-1">Meyveler</h3>
+							<p>Mevsiminde toplanan taze meyveler, tatlı ve ferahlatıcı eşlikçiler.</p>
 						</div>
 					</div>
 					<div class="col-md-3 to-animate">
 						<div class="fh5co-type">
-							<h3 class="with-icon icon-2">Sea food</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<h3 class="with-icon icon-2">Deniz Ürünleri</h3>
+							<p>Günlük taze deniz ürünleri, hafif soslar ve limonlu dokunuşlarla.</p>
 						</div>
 					</div>
 					<div class="col-md-3 to-animate">
 						<div class="fh5co-type">
-							<h3 class="with-icon icon-3">Vegetables</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<h3 class="with-icon icon-3">Sebzeler</h3>
+							<p>Yerel üreticiden gelen sebzeler, ızgara veya buharda hafif soslarla.</p>
 						</div>
 					</div>
 					<div class="col-md-3 to-animate">
 						<div class="fh5co-type">
-							<h3 class="with-icon icon-4">Meat</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<h3 class="with-icon icon-4">Et</h3>
+							<p>Özel marine ve soslarımızla hazırlanan etler, dengeli tatlar için.</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div id="fh5co-menus" data-section="menu">
-			<div class="container">
-				<div class="row text-center fh5co-heading row-padded">
-					<div class="col-md-8 col-md-offset-2">
-						<h2 class="heading to-animate" id="menu-heading">Food Menu</h2>
-						<p class="sub-heading to-animate" id="menu-subheading">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-					</div>
-				</div>
-				<div class="row row-padded" id="menu-sections">
-					<!-- Menu sections injected via JS -->
-				</div>
-				<div class="row">
-					<div class="col-md-4 col-md-offset-4 text-center to-animate-2">
-						<p><a href="#" class="btn btn-primary btn-outline" id="menu-cta">More Food Menu</a></p>
-					</div>
-				</div>
-			</div>
-		</div>
+		<!-- Menü bölümü kullanım dışı bırakıldı; featured alanı menü olarak kullanılacak -->
+		<div id="fh5co-menus" data-section="menu" style="display:none;"></div>
 
 		<div id="fh5co-events" data-section="events" style="background-image: url(images/slide_2.jpg);" data-stellar-background-ratio="0.5">
-			<div class="fh5co-overlay"></div>
+			<div class="fh5co-overlay" style="background: rgba(0,0,0,0.7);"></div>
 			<div class="container">
 				<div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2 to-animate">
-						<h2 class="heading" id="events-heading">Upcoming Events</h2>
-						<p class="sub-heading" id="events-subheading">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<h2 class="heading" id="events-heading">Sayılarla Soos</h2>
+						<p class="sub-heading" id="events-subheading">Kısaca performans özetimiz.</p>
 					</div>
 				</div>
-				<div class="row" id="events-list">
-					<!-- Events injected via JS -->
+				<div class="row row-padded">
+					<div class="col-md-3 col-sm-6 to-animate-2">
+						<div class="fh5co-product" style="background: rgba(255,255,255,0.92); color:#1f1f1f;">
+							<div class="fh5co-desc" style="padding:18px;">
+								<h3 style="margin-top:0;">Aşçılar</h3>
+								<span class="price" style="color:#f35f55;">12</span>
+								<p>Deneyimli şef ekibi</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 to-animate-2">
+						<div class="fh5co-product" style="background: rgba(255,255,255,0.92); color:#1f1f1f;">
+							<div class="fh5co-desc" style="padding:18px;">
+								<h3 style="margin-top:0;">İş Ortağı</h3>
+								<span class="price" style="color:#f35f55;">18</span>
+								<p>Cafe & restoran</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 to-animate-2">
+						<div class="fh5co-product" style="background: rgba(255,255,255,0.92); color:#1f1f1f;">
+							<div class="fh5co-desc" style="padding:18px;">
+								<h3 style="margin-top:0;">Sos Çeşidi</h3>
+								<span class="price" style="color:#f35f55;">7</span>
+								<p>Sürekli üretimde</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 to-animate-2">
+						<div class="fh5co-product" style="background: rgba(255,255,255,0.92); color:#1f1f1f;">
+							<div class="fh5co-desc" style="padding:18px;">
+								<h3 style="margin-top:0;">Satılan Sos</h3>
+								<span class="price" style="color:#f35f55;">42K</span>
+								<p>Kavanoz (yıl başı)</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row text-center" style="margin-top:10px;">
+					<div class="col-md-12 to-animate">
+						<p><a href="stats.html" class="btn btn-primary btn-outline">Tüm İstatistikler</a></p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -275,55 +638,71 @@
 			<div class="container">
 				<div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2">
-						<h2 class="heading to-animate" id="contact-heading">Reserve a Table</h2>
-						<p class="sub-heading to-animate" id="contact-subheading">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<h2 class="heading to-animate" id="contact-heading">Rezervasyon / İletişim</h2>
+						<p class="sub-heading to-animate" id="contact-subheading">Soslarımız ve iş birlikleri için bize ulaşın.</p>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row" style="margin-top:20px;">
+					<div class="col-md-12 to-animate-2">
+						<h3>Konum</h3>
+						<div class="map-embed">
+							<iframe
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.667840228004!2d29.04434111569271!3d41.0004810793006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac8c4e3b8248b%3A0x5cf72d23b712332e!2sG%C3%B6ztepe%20K%C3%B6pr%C3%BCs%C3%BC!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
+								allowfullscreen=""
+								loading="lazy"
+								referrerpolicy="no-referrer-when-downgrade"
+								title="Göztepe Köprüsü">
+							</iframe>
+						</div>
+					</div>
+				</div>
+
+				<div class="row" style="margin-top:25px;">
 					<div class="col-md-6 to-animate-2">
-						<h3>Contact Info</h3>
+						<h3>İletişim Bilgileri</h3>
 						<ul class="fh5co-contact-info">
 							<li class="fh5co-contact-address" id="contact-address">
 								<i class="icon-home"></i>
-								5555 Love Paradise 56 New Clity 5655, <br>Excel Tower United Kingdom
+								Örnek Mah. Lezzet Sok. No:12<br>İstanbul
 							</li>
-							<li><i class="icon-phone"></i> <a href="#" id="contact-phone">(123) 465-6789</a></li>
-							<li><i class="icon-envelope"></i> <a href="#" id="contact-email">info@freehtml5.co</a></li>
-							<li><i class="icon-globe"></i> <a href="http://freehtml5.co/" target="_blank" id="contact-website">freehtml5.co</a></li>
+							<li><i class="icon-phone"></i> <a href="#" id="contact-phone">+90 212 555 12 12</a></li>
+							<li><i class="icon-envelope"></i> <a href="#" id="contact-email">info@foodee.com</a></li>
+							<li><i class="icon-globe"></i> <a href="https://foodee.com" target="_blank" id="contact-website">foodee.com</a></li>
 						</ul>
 					</div>
 					<div class="col-md-6 to-animate-2">
-						<h3>Reservation Form</h3>
+						<h3>Mesaj Formu</h3>
 						<div class="form-group ">
-							<label for="name" class="sr-only">Name</label>
-							<input id="name" class="form-control" placeholder="Name" type="text">
+							<label for="name" class="sr-only">İsim</label>
+							<input id="name" class="form-control" placeholder="İsim" type="text">
 						</div>
 						<div class="form-group ">
-							<label for="email" class="sr-only">Email</label>
-							<input id="email" class="form-control" placeholder="Email" type="email">
+							<label for="email" class="sr-only">E-posta</label>
+							<input id="email" class="form-control" placeholder="E-posta" type="email">
 						</div>
 						<div class="form-group">
-							<label for="occation" class="sr-only">Occation</label>
+							<label for="occation" class="sr-only">Konu</label>
 							<select class="form-control" id="occation">
-								<option>Select an Occation</option>
-							  <option>Wedding Ceremony</option>
-							  <option>Birthday</option>
-							  <option>Others</option>
+								<option>Bir konu seçin</option>
+							  <option>Rezervasyon</option>
+							  <option>Toplu Sipariş</option>
+							  <option>İş Birliği</option>
+							  <option>Diğer</option>
 							</select>
 						</div>
 						<div class="form-group ">
-							<label for="date" class="sr-only">Date</label>
-							<input id="date" class="form-control" placeholder="Date &amp; Time" type="text">
+							<label for="date" class="sr-only">Tarih</label>
+							<input id="date" class="form-control" placeholder="Tarih &amp; Saat" type="text">
 						</div>
 
 
 							
 						<div class="form-group ">
-							<label for="message" class="sr-only">Message</label>
-							<textarea name="" id="message" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
+							<label for="message" class="sr-only">Mesaj</label>
+							<textarea name="" id="message" cols="30" rows="5" class="form-control" placeholder="Mesaj"></textarea>
 						</div>
 						<div class="form-group ">
-							<input class="btn btn-primary" value="Send Message" type="submit" id="contact-button">
+							<input class="btn btn-primary" value="Mesaj Gönder" type="submit" id="contact-button">
 						</div>
 						</div>
 				</div>
@@ -336,19 +715,26 @@
 	<div id="fh5co-footer">
 		<div class="container">
 			<div class="row row-padded">
-				<div class="col-md-12 text-center">
-					<p class="to-animate">&copy; 2016 Foodee Free HTML5 Template. <br> Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://pexels.com/" target="_blank">Pexels</a> <br> Tasty Icons Free <a href="http://handdrawngoods.com/store/tasty-icons-free-food-icons/" target="_blank">handdrawngoods</a>
-					</p>
-					<p class="text-center to-animate"><a href="#" class="js-gotop">Go To Top</a></p>
+				<div class="col-md-4 text-center">
+					<h3 class="to-animate">Soos</h3>
+					<p class="to-animate">El yapımı soslar, şef dokunuşu ve iş ortakları için özelleştirilmiş reçeteler.</p>
+					<p class="to-animate">Tasarım: Efekan</p>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 text-center">
+				<div class="col-md-4 text-center">
+					<h3 class="to-animate">İletişim</h3>
+					<p class="to-animate">Örnek Mah. Lezzet Sok. No:12<br>İstanbul</p>
+					<p class="to-animate">Tel: <a href="tel:+902125551212">+90 212 555 12 12</a></p>
+					<p class="to-animate">E-posta: <a href="mailto:info@soos.com">info@soos.com</a></p>
+					<p class="to-animate"><a href="https://soos.com" target="_blank">soos.com</a></p>
+				</div>
+				<div class="col-md-4 text-center">
+					<h3 class="to-animate">Sosyal</h3>
 					<ul class="fh5co-social">
-						<li class="to-animate-2"><a href="#"><i class="icon-facebook"></i></a></li>
-						<li class="to-animate-2"><a href="#"><i class="icon-twitter"></i></a></li>
-						<li class="to-animate-2"><a href="#"><i class="icon-instagram"></i></a></li>
+						<li class="to-animate-2"><a href="https://instagram.com/soos" target="_blank"><i class="icon-instagram"></i></a></li>
+						<li class="to-animate-2"><a href="https://twitter.com/soos" target="_blank"><i class="icon-twitter"></i></a></li>
+						<li class="to-animate-2"><a href="https://facebook.com/soos" target="_blank"><i class="icon-facebook"></i></a></li>
 					</ul>
+					<p class="text-center to-animate" style="margin-top:10px;"><a href="#" class="js-gotop">Yukarı Çık</a></p>
 				</div>
 			</div>
 		</div>
@@ -393,16 +779,29 @@
 		</li>
 	</template>
 
-	<template id="event-card-template">
-		<div class="col-md-4">
-			<div class="fh5co-event to-animate-2">
-				<h3 class="event-title"></h3>
-				<span class="fh5co-event-meta event-date"></span>
-				<p class="event-description"></p>
-				<p><a href="#" class="btn btn-primary btn-outline event-link">Read More</a></p>
-			</div>
-		</div>
-	</template>
+	<!-- Announcement Modal -->
+	<div class="modal fade" id="announcementModal" tabindex="-1" role="dialog" aria-labelledby="announcementModalLabel">
+	  <div class="modal-dialog modal-lg" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="announcementModalLabel">Duyuru</h4>
+	        <small class="text-muted" id="announcementModalDate"></small>
+	      </div>
+	      <div class="modal-body">
+	        <div id="announcementModalImage" style="width:100%;height:240px;background-size:cover;background-position:center;margin-bottom:15px;display:none;"></div>
+	        <div id="announcementModalBody"></div>
+	        <div id="announcementModalAttachments" style="margin-top:15px; display:none;">
+	        	<h5>Ekler</h5>
+	        	<ul class="list-unstyled" id="announcementModalAttachmentList"></ul>
+	        </div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 
 	
 	
@@ -424,6 +823,8 @@
 
 	<!-- Flexslider -->
 	<script src="js/jquery.flexslider-min.js"></script>
+	<!-- Swiper JS -->
+	<script src="js/swiper-bundle.min.js"></script>
 	<script>
 		$(function () {
 	       $('#date').datetimepicker();

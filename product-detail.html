@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Product Detail — Foodee</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="favicon.ico">
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
+	
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/simple-line-icons.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<style>
+		.product-detail-page {
+			padding: 120px 0 80px;
+			min-height: 80vh;
+		}
+		.product-detail-image {
+			width: 100%;
+			height: 450px;
+			background-size: cover;
+			background-position: center;
+			border-radius: 12px;
+			box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+		}
+		.product-detail-content {
+			padding-left: 40px;
+		}
+		.product-detail-content h1 {
+			font-family: 'Playfair Display', serif;
+			font-size: 42px;
+			margin-bottom: 15px;
+			color: #333;
+		}
+		.product-detail-price {
+			font-size: 32px;
+			color: #f35f55;
+			font-weight: bold;
+			margin-bottom: 25px;
+		}
+		.product-detail-description {
+			font-size: 18px;
+			line-height: 1.8;
+			color: #555;
+			margin-bottom: 30px;
+		}
+		.product-features {
+			margin-bottom: 30px;
+		}
+		.product-features h4 {
+			font-family: 'Playfair Display', serif;
+			font-size: 20px;
+			margin-bottom: 15px;
+			color: #333;
+		}
+		.product-features ul {
+			list-style: none;
+			padding: 0;
+		}
+		.product-features li {
+			padding: 8px 0 8px 28px;
+			position: relative;
+			color: #666;
+			font-size: 16px;
+		}
+		.product-features li:before {
+			content: "✓";
+			position: absolute;
+			left: 0;
+			color: #f35f55;
+			font-weight: bold;
+		}
+		.btn-back {
+			display: inline-block;
+			padding: 14px 35px;
+			background: #f35f55;
+			color: #fff;
+			border-radius: 30px;
+			text-decoration: none;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-size: 14px;
+			margin-right: 15px;
+			transition: background 0.3s;
+		}
+		.btn-back:hover {
+			background: #d94d44;
+			color: #fff;
+		}
+		.btn-reserve {
+			display: inline-block;
+			padding: 14px 35px;
+			background: transparent;
+			color: #f35f55;
+			border: 2px solid #f35f55;
+			border-radius: 30px;
+			text-decoration: none;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-size: 14px;
+			transition: all 0.3s;
+		}
+		.btn-reserve:hover {
+			background: #f35f55;
+			color: #fff;
+		}
+		.loading-message, .error-message {
+			text-align: center;
+			padding: 100px 0;
+		}
+		.loading-message h2, .error-message h2 {
+			font-family: 'Playfair Display', serif;
+		}
+		.error-message h2 {
+			color: #f35f55;
+		}
+		@media (max-width: 991px) {
+			.product-detail-content {
+				padding: 30px 0 0;
+			}
+			.product-detail-image {
+				height: 300px;
+			}
+			.product-detail-content h1 {
+				font-size: 32px;
+			}
+		}
+	</style>
+	</head>
+	<body>
+
+	<!-- Navigation -->
+	<div class="fh5co-main-nav" style="position: fixed; top: 0; left: 0; right: 0; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 9999;">
+		<div class="container-fluid">
+			<div class="fh5co-menu-1">
+				<a href="index.html">Ana Sayfa</a>
+				<a href="index.html#fh5co-about">Hakkımızda</a>
+				<a href="index.html#fh5co-products">Ürünlerimiz</a>
+			</div>
+			<div class="fh5co-logo">
+				<a href="index.html">soos</a>
+			</div>
+			<div class="fh5co-menu-2">
+				<a href="index.html#fh5co-featured">Sos Menüsü</a>
+				<a href="index.html#fh5co-events">Etkinlikler</a>
+				<div class="nav-dropdown">
+					<a href="index.html#fh5co-contact">İletişim <span class="caret"></span></a>
+					<div class="nav-dropdown-menu">
+						<a href="index.html#fh5co-contact" class="external">İletişim</a>
+						<a href="feedback.html" class="external">Şikayet / Öneri</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Product Detail -->
+	<div class="product-detail-page">
+		<div class="container">
+			<!-- Loading -->
+			<div id="loading" class="loading-message">
+				<h2>Yükleniyor...</h2>
+			</div>
+
+			<!-- Error -->
+			<div id="error" class="error-message" style="display: none;">
+				<h2>Ürün Bulunamadı</h2>
+				<p>Aradığınız ürün mevcut değil.</p>
+				<a href="index.html" class="btn-back">Ana Sayfaya Dön</a>
+			</div>
+
+			<!-- Content -->
+			<div id="product-content" class="row" style="display: none;">
+				<div class="col-md-6">
+					<div class="product-detail-image" id="product-image"></div>
+				</div>
+				<div class="col-md-6">
+					<div class="product-detail-content">
+						<h1 id="product-title"></h1>
+						<div class="product-detail-price" id="product-price"></div>
+						<p class="product-detail-description" id="product-description"></p>
+						
+						<div class="product-features">
+						<h4>Öne Çıkanlar</h4>
+							<ul id="product-features"></ul>
+						</div>
+
+						<a href="index.html#fh5co-products" class="btn-back">← Ürünlere Dön</a>
+						<a href="index.html#fh5co-contact" class="btn-reserve">İletişim / Rezervasyon</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer (same as main) -->
+	<div id="fh5co-footer">
+		<div class="container">
+			<div class="row row-padded">
+				<div class="col-md-4 text-center">
+					<h3 class="to-animate">Soos</h3>
+					<p class="to-animate">El yapımı soslar, şef dokunuşu ve iş ortakları için özelleştirilmiş reçeteler.</p>
+					<p class="to-animate">Tasarım: Efekan</p>
+				</div>
+				<div class="col-md-4 text-center">
+					<h3 class="to-animate">İletişim</h3>
+					<p class="to-animate">Örnek Mah. Lezzet Sok. No:12<br>İstanbul</p>
+					<p class="to-animate">Tel: <a href="tel:+902125551212">+90 212 555 12 12</a></p>
+					<p class="to-animate">E-posta: <a href="mailto:info@soos.com">info@soos.com</a></p>
+					<p class="to-animate"><a href="https://soos.com" target="_blank">soos.com</a></p>
+				</div>
+				<div class="col-md-4 text-center">
+					<h3 class="to-animate">Sosyal</h3>
+					<ul class="fh5co-social">
+						<li class="to-animate-2"><a href="https://instagram.com/soos" target="_blank"><i class="icon-instagram"></i></a></li>
+						<li class="to-animate-2"><a href="https://twitter.com/soos" target="_blank"><i class="icon-twitter"></i></a></li>
+						<li class="to-animate-2"><a href="https://facebook.com/soos" target="_blank"><i class="icon-facebook"></i></a></li>
+					</ul>
+					<p class="text-center to-animate" style="margin-top:10px;"><a href="#" class="js-gotop">Yukarı Çık</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// Sayfa yüklendiğinde ürün detayını çek
+		(async function() {
+			const urlParams = new URLSearchParams(window.location.search);
+			const productId = urlParams.get('id');
+
+			const loadingEl = document.getElementById('loading');
+			const errorEl = document.getElementById('error');
+			const contentEl = document.getElementById('product-content');
+
+			if (!productId) {
+				loadingEl.style.display = 'none';
+				errorEl.style.display = 'block';
+				return;
+			}
+
+			try {
+				const response = await fetch('data/content.json', { cache: 'no-cache' });
+				if (!response.ok) throw new Error('Failed to load');
+				
+				const data = await response.json();
+				const product = data.products?.items?.find(p => p.id === productId);
+
+				if (!product) {
+					loadingEl.style.display = 'none';
+					errorEl.style.display = 'block';
+					return;
+				}
+
+				// Sayfa başlığı
+				document.title = `${product.title} — Foodee`;
+
+				// İçeriği doldur
+				document.getElementById('product-image').style.backgroundImage = `url('${product.image}')`;
+				document.getElementById('product-title').textContent = product.title;
+				document.getElementById('product-price').textContent = product.price;
+				document.getElementById('product-description').textContent = product.description;
+
+				// Özellikler
+				const featuresEl = document.getElementById('product-features');
+				if (product.features && Array.isArray(product.features)) {
+					featuresEl.innerHTML = product.features.map(f => `<li>${f}</li>`).join('');
+				}
+
+				// Göster
+				loadingEl.style.display = 'none';
+				contentEl.style.display = 'flex';
+
+			} catch (error) {
+				console.error('Error:', error);
+				loadingEl.style.display = 'none';
+				errorEl.style.display = 'block';
+			}
+		})();
+	</script>
+
+	</body>
+</html>
+

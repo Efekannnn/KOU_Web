@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Announcements — Foodee</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="favicon.ico">
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/simple-line-icons.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<style>
+		body {
+			background:
+				linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.08)),
+				url('images/wood_1.png');
+			background-size: 380px 380px;
+			background-repeat: repeat;
+			background-position: center;
+		}
+		#ann-page {
+			padding: 80px 0 60px;
+		}
+		.ann-card {
+			position: relative;
+			min-height: 220px;
+			height: 100%;
+			margin-bottom: 20px;
+			background: #111317;
+			color: #f2f2f2;
+			box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+			border: 1px solid rgba(255,255,255,0.06);
+			border-radius: 14px;
+			padding: 22px 22px 18px;
+			cursor: pointer;
+			transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+			overflow: hidden;
+		}
+		.ann-card:before {
+			content: "";
+			position: absolute;
+			left: -20px;
+			top: -20px;
+			width: 120px;
+			height: 120px;
+			background: radial-gradient(circle at center, rgba(243,95,85,0.18), rgba(255,159,67,0));
+			transform: rotate(25deg);
+		}
+		.ann-card:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+			border-color: rgba(255,255,255,0.12);
+		}
+		.ann-card h3 { color: #fff; font-size: 20px; margin-top: 6px; }
+		.ann-card .ann-meta {
+			display: inline-block;
+			padding: 6px 10px;
+			border-radius: 999px;
+			background: rgba(243,95,85,0.16);
+			color: #ffb39e;
+			font-weight: 600;
+			margin: 10px 0 12px;
+		}
+		.ann-card p { color: #d8d8d8; margin-bottom: 12px; }
+		.btn-details-ann {
+			display: inline-block;
+			padding: 10px 25px;
+			background: #f35f55;
+			color: #fff;
+			border-radius: 25px;
+			text-decoration: none;
+			font-size: 13px;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			border: none;
+			transition: background 0.3s ease;
+		}
+		.btn-details-ann:hover { background: #d94d44; color: #fff; text-decoration: none; }
+		.branch-card {
+			background: rgba(12,12,12,0.9);
+			border: 1px solid rgba(255,255,255,0.08);
+			border-radius: 12px;
+			padding: 16px 18px;
+			color: #f2f2f2;
+			box-shadow: 0 10px 28px rgba(0,0,0,0.28);
+			height: 100%;
+			transition: transform .2s ease, box-shadow .2s ease;
+		}
+		.branch-card:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 16px 36px rgba(0,0,0,0.35);
+		}
+		.branch-card h4 {
+			margin-top: 0;
+			margin-bottom: 6px;
+			color: #fff;
+			font-size: 18px;
+		}
+		.branch-card .address {
+			color: #dcdcdc;
+			font-size: 14px;
+			margin-bottom: 4px;
+		}
+		.branch-card .label {
+			display: inline-block;
+			padding: 6px 10px;
+			background: rgba(243,95,85,0.16);
+			border-radius: 999px;
+			color: #ffb39e;
+			font-weight: 600;
+			font-size: 12px;
+			margin-bottom: 8px;
+		}
+	</style>
+	</head>
+	<body>
+
+	<div class="fh5co-main-nav" style="position: fixed; top:0; left:0; right:0; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.08); z-index:9999;">
+		<div class="container-fluid">
+			<div class="fh5co-menu-1">
+				<a href="index.html">Ana Sayfa</a>
+				<div class="nav-dropdown">
+					<a href="index.html#fh5co-products" class="external">Ürünlerimiz <span class="caret"></span></a>
+					<div class="nav-dropdown-menu">
+						<a href="index.html#fh5co-products" class="external">Öne Çıkan Ürünler</a>
+						<a href="index.html#fh5co-featured" class="external">Sos Menü</a>
+						<a href="index.html#fh5co-events" class="external">Özel Etkinlikler</a>
+					</div>
+				</div>
+				<div class="nav-dropdown">
+					<a href="announcements.html" class="external">Birimlerimiz <span class="caret"></span></a>
+					<div class="nav-dropdown-menu">
+						<a href="announcements.html#merkez" class="external">Merkez Ofis</a>
+						<a href="announcements.html#sube-1" class="external">Kadıköy</a>
+						<a href="announcements.html#sube-2" class="external">Beyoğlu</a>
+					</div>
+				</div>
+			</div>
+			<div class="fh5co-logo">
+				<a href="index.html">soos</a>
+			</div>
+			<div class="fh5co-menu-2">
+				<a href="index.html#fh5co-about" class="external">Hakkımızda</a>
+				<a href="announcements.html" class="external">Duyurular</a>
+				<div class="nav-dropdown">
+					<a href="index.html#fh5co-contact" class="external">İletişim <span class="caret"></span></a>
+					<div class="nav-dropdown-menu">
+						<a href="index.html#fh5co-contact" class="external">İletişim</a>
+						<a href="feedback.html" class="external">Şikayet / Öneri</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="ann-page" class="container" style="margin-top:90px;">
+		<div class="row text-center fh5co-heading row-padded">
+			<div class="col-md-8 col-md-offset-2">
+				<h2 class="heading" style="color:#fff;">Duyurular</h2>
+				<p class="sub-heading">Tüm duyuru, fırsat ve kampanyalar</p>
+			</div>
+		</div>
+		<div class="row" id="ann-page-list">
+			<!-- Duyurular JS ile doldurulacak -->
+		</div>
+		<div class="row row-padded" style="color:#fff; margin-top:10px;">
+			<div class="col-md-4 col-sm-6" id="merkez">
+				<div class="branch-card">
+					<span class="label">Merkez Ofis</span>
+					<h4>Soos HQ</h4>
+					<p class="address">Örnek Mah. Lezzet Sok. No:12<br>İstanbul</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6" id="sube-1">
+				<div class="branch-card">
+					<span class="label">Şube 1</span>
+					<h4>Kadıköy</h4>
+					<p class="address">Bağdat Cad. No:45<br>Kadıköy / İstanbul</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6" id="sube-2">
+				<div class="branch-card">
+					<span class="label">Şube 2</span>
+					<h4>Beyoğlu</h4>
+					<p class="address">İstiklal Cad. No:210<br>Beyoğlu / İstanbul</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Announcement Modal (reused) -->
+	<div class="modal fade" id="announcementModal" tabindex="-1" role="dialog" aria-labelledby="announcementModalLabel">
+	  <div class="modal-dialog modal-lg" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="announcementModalLabel">Duyuru</h4>
+	        <small class="text-muted" id="announcementModalDate"></small>
+	      </div>
+	      <div class="modal-body">
+	        <div id="announcementModalImage" style="width:100%;height:240px;background-size:cover;background-position:center;margin-bottom:15px;display:none;"></div>
+	        <div id="announcementModalBody"></div>
+	        <div id="announcementModalAttachments" style="margin-top:15px; display:none;">
+	        	<h5>Ekler</h5>
+	        	<ul class="list-unstyled" id="announcementModalAttachmentList"></ul>
+	        </div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Footer (same as main) -->
+	<div id="fh5co-footer">
+		<div class="container">
+			<div class="row row-padded">
+				<div class="col-md-4 text-center">
+					<h3 class="to-animate">Soos</h3>
+					<p class="to-animate">El yapımı soslar, şef dokunuşu ve iş ortakları için özelleştirilmiş reçeteler.</p>
+					<p class="to-animate">Tasarım: Efekan</p>
+				</div>
+				<div class="col-md-4 text-center">
+					<h3 class="to-animate">İletişim</h3>
+					<p class="to-animate">Örnek Mah. Lezzet Sok. No:12<br>İstanbul</p>
+					<p class="to-animate">Tel: <a href="tel:+902125551212">+90 212 555 12 12</a></p>
+					<p class="to-animate">E-posta: <a href="mailto:info@soos.com">info@soos.com</a></p>
+					<p class="to-animate"><a href="https://soos.com" target="_blank">soos.com</a></p>
+				</div>
+				<div class="col-md-4 text-center">
+					<h3 class="to-animate">Sosyal</h3>
+					<ul class="fh5co-social">
+						<li class="to-animate-2"><a href="https://instagram.com/soos" target="_blank"><i class="icon-instagram"></i></a></li>
+						<li class="to-animate-2"><a href="https://twitter.com/soos" target="_blank"><i class="icon-twitter"></i></a></li>
+						<li class="to-animate-2"><a href="https://facebook.com/soos" target="_blank"><i class="icon-facebook"></i></a></li>
+					</ul>
+					<p class="text-center to-animate" style="margin-top:10px;"><a href="#" class="js-gotop">Yukarı Çık</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		const openAnnouncementModal = (announcement) => {
+			if (!announcement) return;
+			const modalTitle = document.getElementById('announcementModalLabel');
+			const modalDate = document.getElementById('announcementModalDate');
+			const modalBody = document.getElementById('announcementModalBody');
+			const modalImage = document.getElementById('announcementModalImage');
+			const modalAttachWrap = document.getElementById('announcementModalAttachments');
+			const modalAttachList = document.getElementById('announcementModalAttachmentList');
+
+			if (modalTitle) modalTitle.textContent = announcement.title || 'Duyuru';
+			if (modalDate) modalDate.textContent = announcement.date || '';
+			if (modalBody) modalBody.innerHTML = announcement.body || '';
+
+			if (modalImage) {
+				if (announcement.image) {
+					modalImage.style.display = 'block';
+					modalImage.style.backgroundImage = `url('${announcement.image}')`;
+				} else {
+					modalImage.style.display = 'none';
+				}
+			}
+
+			if (modalAttachWrap && modalAttachList) {
+				if (Array.isArray(announcement.attachments) && announcement.attachments.length) {
+					modalAttachList.innerHTML = '';
+					announcement.attachments.forEach((att) => {
+						const li = document.createElement('li');
+						li.innerHTML = `<a href="${att.url}" target="_blank">${att.label || att.url} (${att.type || ''})</a>`;
+						modalAttachList.appendChild(li);
+					});
+					modalAttachWrap.style.display = 'block';
+				} else {
+					modalAttachWrap.style.display = 'none';
+				}
+			}
+
+			if (typeof $ !== 'undefined' && $('#announcementModal').modal) {
+				$('#announcementModal').modal('show');
+			}
+		};
+
+		(async function(){
+			try {
+				const res = await fetch('data/content.json', { cache: 'no-cache' });
+				if (!res.ok) throw new Error('Content fetch failed');
+				const data = await res.json();
+				const items = Array.isArray(data.announcements) ? data.announcements : [];
+
+				const sorted = [...items].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+				const listEl = document.getElementById('ann-page-list');
+				if (!listEl) return;
+
+				if (!sorted.length) {
+					listEl.innerHTML = '<div class="col-md-12"><p style="color:#fff;">Duyuru bulunamadı.</p></div>';
+					return;
+				}
+
+				listEl.innerHTML = '';
+				sorted.forEach((item, idx) => {
+					const col = document.createElement('div');
+					col.className = 'col-md-4 col-sm-6 ann-anim';
+					col.style.animationDelay = `${0.08 * idx + 0.05}s`;
+					col.innerHTML = `
+						<div class="ann-card">
+							<h3>${item.title}</h3>
+							<span class="ann-meta">${item.date || ''}</span>
+							<p>${item.summary || ''}</p>
+							<a href="#" class="btn-details-ann">Detay</a>
+						</div>
+					`;
+					col.onclick = (e) => {
+						e.preventDefault();
+						openAnnouncementModal(item);
+					};
+					listEl.appendChild(col);
+				});
+			} catch (e) {
+				console.error(e);
+			}
+		})();
+	</script>
+
+	</body>
+</html>
+
