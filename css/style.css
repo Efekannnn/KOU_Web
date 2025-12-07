@@ -251,6 +251,7 @@ p {
 #fh5co-home .flexslider .slides li {
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center 60%;
 }
 #fh5co-home .flexslider .fh5co-overlay {
   position: absolute;
@@ -317,6 +318,56 @@ p {
 .fh5co-main-nav .fh5co-logo a:active {
   outline: none;
   text-decoration: none;
+}
+.fh5co-main-nav .nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.fh5co-main-nav .nav-dropdown > a {
+  padding-right: 26px;
+}
+.fh5co-main-nav .nav-dropdown-menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  min-width: 190px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border: 1px solid #efefef;
+  border-radius: 6px;
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.2s ease;
+  z-index: 999;
+  text-align: left;
+}
+.fh5co-main-nav .nav-dropdown:hover .nav-dropdown-menu,
+.fh5co-main-nav .nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.fh5co-main-nav .nav-dropdown-menu a {
+  display: block;
+  padding: 10px 16px;
+  color: #130d08;
+  white-space: nowrap;
+}
+.fh5co-main-nav .nav-dropdown-menu a:hover {
+  background: #f7f7f7;
+  color: #fb6e14;
+  text-decoration: none;
+}
+.fh5co-main-nav .nav-dropdown .caret {
+  border-top: 4px solid #130d08;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  display: inline-block;
+  margin-left: 6px;
+  position: relative;
+  top: -1px;
 }
 .fh5co-main-nav .fh5co-menu-1 a.active,
 .fh5co-main-nav .fh5co-menu-2 a.active,

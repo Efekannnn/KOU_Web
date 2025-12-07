@@ -235,6 +235,8 @@ const renderEvents = (events = {}) => {
 };
 
 const renderProducts = (products = {}) => {
+	console.log('renderProducts çağrıldı:', products);
+	
 	// Başlık ve alt başlık
 	const headingEl = document.getElementById('products-heading');
 	if (headingEl && products.title) {
@@ -300,6 +302,89 @@ const renderProducts = (products = {}) => {
 	}
 };
 
+const openAnnouncementModal = (announcement) => {
+	if (!announcement) return;
+	const modalTitle = document.getElementById('announcementModalLabel');
+	const modalDate = document.getElementById('announcementModalDate');
+	const modalBody = document.getElementById('announcementModalBody');
+	const modalImage = document.getElementById('announcementModalImage');
+	const modalAttachWrap = document.getElementById('announcementModalAttachments');
+	const modalAttachList = document.getElementById('announcementModalAttachmentList');
+
+	if (modalTitle) modalTitle.textContent = announcement.title || 'Duyuru';
+	if (modalDate) modalDate.textContent = announcement.date || '';
+	if (modalBody) modalBody.innerHTML = announcement.body || '';
+
+	if (modalImage) {
+		if (announcement.image) {
+			modalImage.style.display = 'block';
+			modalImage.style.backgroundImage = `url('${announcement.image}')`;
+		} else {
+			modalImage.style.display = 'none';
+		}
+	}
+
+	if (modalAttachWrap && modalAttachList) {
+		if (Array.isArray(announcement.attachments) && announcement.attachments.length) {
+			modalAttachList.innerHTML = '';
+			announcement.attachments.forEach((att) => {
+				const li = document.createElement('li');
+				li.innerHTML = `<a href="${att.url}" target="_blank">${att.label || att.url} (${att.type || ''})</a>`;
+				modalAttachList.appendChild(li);
+			});
+			modalAttachWrap.style.display = 'block';
+		} else {
+			modalAttachWrap.style.display = 'none';
+		}
+	}
+
+	if (typeof $ !== 'undefined' && $('#announcementModal').modal) {
+		$('#announcementModal').modal('show');
+	}
+};
+
+const renderAnnouncements = (ann = {}) => {
+	const listEl = document.getElementById('announcement-list');
+	if (!listEl) return;
+
+	// Hem dizi hem { items: [] } yapısını destekle
+	const items = Array.isArray(ann) ? ann : Array.isArray(ann.items) ? ann.items : [];
+	if (!items.length) {
+		listEl.innerHTML = '<div class="col-md-12"><p>Şu an duyuru bulunmuyor.</p></div>';
+		const moreBtn = document.getElementById('announcements-more');
+		if (moreBtn) moreBtn.style.display = 'none';
+		return;
+	}
+
+	// En yeni -> eski
+	const sorted = [...items].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+	const firstFive = sorted.slice(0, 5);
+
+	listEl.innerHTML = '';
+	firstFive.forEach((item) => {
+		const col = document.createElement('div');
+		col.className = 'col-md-4 col-sm-6';
+		col.innerHTML = `
+			<div class="fh5co-event" style="cursor:pointer;">
+				<h3>${item.title}</h3>
+				<span class="fh5co-event-meta">${item.date || ''}</span>
+				<p>${item.summary || ''}</p>
+				<p><a href="#" class="btn-details-ann">Detay</a></p>
+			</div>
+		`;
+		col.onclick = (e) => {
+			e.preventDefault();
+			openAnnouncementModal(item);
+		};
+		listEl.appendChild(col);
+	});
+
+	const moreBtn = document.getElementById('announcements-more');
+	if (moreBtn) {
+		moreBtn.style.display = sorted.length ? 'inline-block' : 'none';
+	}
+};
+
 const renderContact = (contact = {}) => {
 	const headingEl = document.getElementById('contact-heading');
 	if (headingEl && contact.title) {
@@ -349,6 +434,7 @@ const renderSite = (content) => {
 	renderSiteMeta(content.site);
 	renderHero(content.hero);
 	renderAbout(content.about);
+	renderAnnouncements(content.announcements);
 	renderProducts(content.products);
 	renderQuotes(content.quotes);
 	renderMenu(content.menu);
