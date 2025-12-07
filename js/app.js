@@ -193,45 +193,8 @@ const renderMenu = (menu = {}) => {
 	}
 };
 
-const renderEvents = (events = {}) => {
-	const headingEl = document.getElementById('events-heading');
-	if (headingEl && events.title) {
-		headingEl.textContent = events.title;
-	}
-
-	const subheadingEl = document.getElementById('events-subheading');
-	if (subheadingEl && events.subtitle) {
-		subheadingEl.textContent = events.subtitle;
-	}
-
-	const listEl = document.getElementById('events-list');
-	const template = document.getElementById('event-card-template');
-	if (listEl && template && Array.isArray(events.items)) {
-		listEl.innerHTML = '';
-		events.items.forEach((event) => {
-			const fragment = template.content.cloneNode(true);
-			const titleEl = fragment.querySelector('.event-title');
-			const dateEl = fragment.querySelector('.event-date');
-			const descEl = fragment.querySelector('.event-description');
-			const linkEl = fragment.querySelector('.event-link');
-
-			if (titleEl && event.title) {
-				titleEl.textContent = event.title;
-			}
-			if (dateEl && event.date) {
-				dateEl.textContent = event.date;
-			}
-			if (descEl && event.description) {
-				descEl.textContent = event.description;
-			}
-			if (linkEl && event.link) {
-				linkEl.textContent = event.link.label || linkEl.textContent;
-				linkEl.href = event.link.url || '#';
-			}
-
-			listEl.appendChild(fragment);
-		});
-	}
+const renderEvents = () => {
+	// Etkinlik bölümü statik istatistik kartları gösteriyor; dinamik veri gerekmiyor.
 };
 
 const renderProducts = (products = {}) => {
@@ -361,9 +324,10 @@ const renderAnnouncements = (ann = {}) => {
 	const firstFive = sorted.slice(0, 5);
 
 	listEl.innerHTML = '';
-	firstFive.forEach((item) => {
+	firstFive.forEach((item, idx) => {
 		const col = document.createElement('div');
-		col.className = 'col-md-4 col-sm-6';
+		col.className = 'col-md-4 col-sm-6 ann-anim';
+		col.style.animationDelay = `${0.08 * idx + 0.05}s`;
 		col.innerHTML = `
 			<div class="fh5co-event" style="cursor:pointer;">
 				<h3>${item.title}</h3>

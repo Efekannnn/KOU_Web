@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Şikayet / Öneri — Soos</title>
+	<title>Sayılarla Soos</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="shortcut icon" href="favicon.ico">
@@ -27,21 +27,85 @@
 		.page-section {
 			padding: 140px 0 80px;
 		}
-		.feedback-card {
-			background: #ffffff;
+		.stat-card {
+			background: #fff;
 			border: 1px solid #ececf0;
 			border-radius: 12px;
+			padding: 18px;
 			box-shadow: 0 10px 26px rgba(0,0,0,0.08);
-			padding: 24px;
-			margin-top: 10px;
+			height: 100%;
 		}
-		.feedback-card h3 {
+		.stat-card h3 {
 			margin-top: 0;
-			margin-bottom: 8px;
+			margin-bottom: 6px;
+			font-size: 18px;
+			color: #444;
 		}
-		.feedback-card .help-text {
+		.stat-card .value {
+			font-size: 34px;
+			font-weight: 700;
+			color: #f35f55;
+			margin-bottom: 6px;
+		}
+		.stat-card .note {
 			color: #666;
-			margin-bottom: 16px;
+			font-size: 13px;
+		}
+		.chart-card {
+			background: #fff;
+			border: 1px solid #ececf0;
+			border-radius: 12px;
+			padding: 20px;
+			box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+			margin-top: 20px;
+		}
+		.bar-row {
+			display: flex;
+			align-items: center;
+			margin-bottom: 10px;
+			gap: 10px;
+		}
+		.bar-label {
+			width: 70px;
+			font-weight: 600;
+			color: #555;
+			font-size: 13px;
+		}
+		.bar-track {
+			flex: 1;
+			height: 12px;
+			background: #f1f1f5;
+			border-radius: 999px;
+			overflow: hidden;
+		}
+		.bar-fill {
+			height: 100%;
+			background: linear-gradient(90deg, #f35f55, #f35f55);
+			width: 0;
+			transition: width .6s ease;
+		}
+		.donut {
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			background: conic-gradient(#f35f55 var(--pct, 40%), #f1f1f5 0);
+			display: grid;
+			place-items: center;
+			margin: 0 auto 10px;
+			position: relative;
+		}
+		.donut:after {
+			content: "";
+			width: 120px;
+			height: 120px;
+			border-radius: 50%;
+			background: #fff;
+		}
+		.donut .center {
+			position: absolute;
+			text-align: center;
+			font-weight: 700;
+			color: #f35f55;
 		}
 	</style>
 	</head>
@@ -89,34 +153,60 @@
 		<div class="container">
 			<div class="row text-center fh5co-heading row-padded">
 				<div class="col-md-8 col-md-offset-2">
-					<h2 class="heading" style="color:#f35f55;">Şikayet ve Öneri Formu</h2>
-					<p class="sub-heading">Başlık ve içerik alanlarını doldurun; mesajınız müşteri ilişkileri temsilcisine iletilmek üzere hazırlanacaktır.</p>
+					<h2 class="heading" style="color:#f35f55;">Sayılarla Soos</h2>
+					<p class="sub-heading">Aşçılarımız, iş ortaklarımız ve sos performansımıza dair hızlı özet.</p>
 				</div>
 			</div>
+
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="feedback-card">
-						<form id="feedback-form" action="mailto:musteri@soos.com" method="post" enctype="text/plain">
-							<div class="form-group">
-								<label for="feedback-subject">Başlık</label>
-								<input id="feedback-subject" name="Konu" class="form-control" placeholder="Başlık" type="text" required>
-							</div>
-							<div class="form-group">
-								<label for="feedback-email">E-posta</label>
-								<input id="feedback-email" name="E-posta" class="form-control" placeholder="E-posta (size dönüş yapalım)" type="email" required>
-							</div>
-							<div class="form-group">
-								<label for="feedback-message">İçerik</label>
-								<textarea id="feedback-message" name="Mesaj" cols="30" rows="6" class="form-control" placeholder="Şikayet veya öneriniz" required></textarea>
-							</div>
-							<div class="form-group">
-								<button type="submit" class="btn btn-primary">Gönder</button>
-								<small style="display:block; margin-top:6px; color:#777;">Bu form, müşteri ilişkileri temsilcisine e-posta ile iletilmek üzere tasarlanmıştır.</small>
-							</div>
-						</form>
+				<div class="col-md-3 col-sm-6">
+					<div class="stat-card text-center">
+						<h3>Aşçılarımız</h3>
+						<div class="value" id="stat-chefs">12</div>
+						<div class="note">Deneyimli şef</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="stat-card text-center">
+						<h3>İş Ortakları</h3>
+						<div class="value" id="stat-partners">18</div>
+						<div class="note">Cafe & restoran</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="stat-card text-center">
+						<h3>Sos Çeşidi</h3>
+						<div class="value" id="stat-sauces">7</div>
+						<div class="note">Sürekli üretimde</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="stat-card text-center">
+						<h3>Satılan Sos</h3>
+						<div class="value" id="stat-sold">42K</div>
+						<div class="note">Kavanoz (yıl başı)</div>
 					</div>
 				</div>
 			</div>
+
+			<div class="row">
+				<div class="col-md-7">
+					<div class="chart-card">
+						<h3 style="margin-top:0;">Aylık Sos Satışları (K)</h3>
+						<div id="bar-chart"></div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="chart-card text-center">
+						<h3 style="margin-top:0;">Üretim Kapasite Kullanımı</h3>
+						<div class="donut" id="donut" style="--pct:70%;">
+							<div class="center"><span id="donut-value">70%</span></div>
+						</div>
+						<div class="note">Haftalık ortalama kapasite</div>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</div>
 
@@ -149,19 +239,47 @@
 	</div>
 
 	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
 	<script>
-		(function() {
-			var form = document.getElementById('feedback-form');
-			if (!form) return;
-			form.addEventListener('submit', function(e) {
-				// Demo davranışı: gerçek e-posta entegrasyonu için sunucu gerekir
-				alert('Mesajınız müşteri ilişkileri temsilcisine e-posta ile iletilmek üzere hazırlandı (demo).');
-				// mailto davranışı için form submitine izin vermek isterseniz alttaki satırı kaldırın
-				e.preventDefault();
-				form.reset();
+		// Basit bar chart verisi
+		const monthlySales = [
+			{ label: 'Oca', value: 5 },
+			{ label: 'Şub', value: 6 },
+			{ label: 'Mar', value: 7 },
+			{ label: 'Nis', value: 7.5 },
+			{ label: 'May', value: 8.5 },
+			{ label: 'Haz', value: 9 }
+		];
+
+		function renderBars() {
+			const container = document.getElementById('bar-chart');
+			if (!container) return;
+			const max = Math.max(...monthlySales.map(m => m.value));
+			container.innerHTML = '';
+			monthlySales.forEach(item => {
+				const row = document.createElement('div');
+				row.className = 'bar-row';
+				row.innerHTML = `
+					<div class="bar-label">${item.label}</div>
+					<div class="bar-track"><div class="bar-fill" style="width:0;"></div></div>
+					<div style="width:50px; text-align:right; font-weight:600; color:#444;">${item.value}K</div>
+				`;
+				container.appendChild(row);
+				requestAnimationFrame(() => {
+					const fill = row.querySelector('.bar-fill');
+					if (fill) fill.style.width = `${(item.value / max) * 100}%`;
+				});
 			});
+		}
+
+		(function initDonut(){
+			const donut = document.getElementById('donut');
+			const valueEl = document.getElementById('donut-value');
+			const pct = 70;
+			if (donut) donut.style.setProperty('--pct', `${pct}%`);
+			if (valueEl) valueEl.textContent = `${pct}%`;
 		})();
+
+		renderBars();
 	</script>
 
 	</body>

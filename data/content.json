@@ -22,8 +22,8 @@
   },
   "about": {
     "heading": "Hakkımızda",
-    "bodyHtml": "<span class=\"firstcharacter\">F</span>oodee, özenle seçilmiş malzemelerle hazırlanan soslar ve eşlikçileriyle masanıza yeni bir deneyim getirir. Her kavanozda taze aromalar, dengeli tatlar ve paylaşmaya değer reçeteler var. Şef ekibimiz, ev yapımı dokunuşu modern tekniklerle birleştiriyor; böylece ister atıştırmalık, ister ana yemek olsun tabağınıza yakışan sosu kolayca buluyorsunuz.",
-    "cta": { "label": "Bizimle iletişime geçin", "url": "#" },
+    "bodyHtml": "<span class=\"firstcharacter\">S</span>oos, özenle seçilmiş malzemelerle hazırlanan soslar ve eşlikçileriyle masanıza yeni bir deneyim getirir. Her kavanozda taze aromalar, dengeli tatlar ve paylaşmaya değer reçeteler var. Şef ekibimiz, ev yapımı dokunuşu modern tekniklerle birleştiriyor; böylece ister atıştırmalık, ister ana yemek olsun tabağınıza yakışan sosu kolayca buluyorsunuz.",
+    "cta": { "label": "", "url": "" },
     "image": "images/res_img_1.jpg"
   },
   "quotes": [
@@ -91,15 +91,7 @@
     ],
     "cta": { "label": "Daha Fazla Menü", "url": "#" }
   },
-  "events": {
-    "title": "Yaklaşan Etkinlikler",
-    "subtitle": "Atölyeler, tadımlar ve canlı müzik geceleri; yerinizi ayırtmayı unutmayın.",
-    "items": [
-      { "title": "Mutfak Atölyesi", "date": "19 Mart 2025", "description": "Şef eşliğinde mevsimlik tabaklar ve sos teknikleri.", "link": { "label": "Detaylı Bilgi", "url": "#" } },
-      { "title": "Açık Hava Caz", "date": "2 Nisan 2025", "description": "Yerel sanatçılar, eşleşmiş atıştırmalık ve içecek menüsü.", "link": { "label": "Rezervasyon", "url": "#" } },
-      { "title": "Topluluk Sofrası", "date": "23 Nisan 2025", "description": "Yakın çiftliklerden gelen ürünlerle paylaşım masası.", "link": { "label": "Katıl", "url": "#" } }
-    ]
-  },
+  "events": {},
   "contact": {
     "title": "Rezervasyon / İletişim",
     "subtitle": "Soslarımız hakkında bilgi, toplu sipariş veya iş birliği için bize ulaşın.",
@@ -110,21 +102,23 @@
     "buttonLabel": "Mesaj Gönder"
   },
   "products": {
-    "title": "Öne Çıkan Ürünler",
-    "subtitle": "Şef imzası taşıyan, özenle hazırlanmış tabaklarımız.",
+    "title": "Sos Menüsü",
+    "subtitle": "Öne çıkan soslarımız",
     "items": [
-      { "id": "special-steak", "title": "Şefin Özel Bonfilesi", "price": "₺425", "description": "Kuru dinlendirilmiş bonfile, köz sebzeler ve imza sos ile.", "image": "images/res_img_3.jpg", "features": ["21 gün dinlendirilmiş et", "Mevsim sebzeleri", "Özel sos"] },
-      { "id": "italian-pasta", "title": "El Yapımı İtalyan Makarna", "price": "₺295", "description": "Günlük açılan hamur, domates, fesleğen ve parmesan ile.", "image": "images/res_img_4.jpg", "features": ["Günlük taze makarna", "San Marzano domates", "Eski kaşar/parmesan"] },
-      { "id": "organic-salad", "title": "Organik Bahçe Salatası", "price": "₺210", "description": "Yerel yeşillikler, ızgara tavuk ve balsamik dokunuş.", "image": "images/res_img_6.jpg", "features": ["Yerel üretici", "Organik yeşillik", "Serbest gezen tavuk"] },
-      { "id": "seafood-platter", "title": "Akdeniz Deniz Ürünleri", "price": "₺520", "description": "Izgara karides, kalamar ve limonlu tereyağı sos eşliğinde.", "image": "images/res_img_2.jpg", "features": ["Günlük deniz ürünü", "Siparişe özel ızgara", "Limonlu tereyağı sos"] }
+      { "id": "truf-mayo", "title": "Trüf Mayonez", "price": "₺95", "description": "Yoğun trüf aromalı, patates ve burger için imza sos.", "image": "images/res_img_1.jpg", "features": ["Trüf yağı", "Kremamsı doku", "Patates/burger uyumu"] },
+      { "id": "biber-sos", "title": "Izgara Biber Sos", "price": "₺85", "description": "Tütsülenmiş kapya biber, hafif acı ve tatlı dengesi.", "image": "images/res_img_2.jpg", "features": ["Köz kapya", "Hafif acı", "Izgara et uyumu"] },
+      { "id": "parmesan-dip", "title": "Parmesan Sarımsaklı Dip", "price": "₺75", "description": "Parmesan, sarımsak ve hafif limon kabuğu ile kremamsı dip.", "image": "images/res_img_8.jpg", "features": ["Parmesan", "Sarımsak", "Kremamsı yapı"] },
+      { "id": "pesto", "title": "Fesleğenli Pesto", "price": "₺80", "description": "Taze fesleğen, çam fıstığı ve zeytinyağı ile klasik pesto.", "image": "images/res_img_7.jpg", "features": ["Taze fesleğen", "Çam fıstığı", "Zeytinyağı"] },
+      { "id": "yogurt-tahin", "title": "Yoğurtlu Tahin", "price": "₺70", "description": "Kavrulmuş susam tahini ve süzme yoğurt ile hafif, dengeli sos.", "image": "images/res_img_6.jpg", "features": ["Tahin", "Süzme yoğurt", "Dengeli tat"] }
     ]
   },
   "announcements": [
-    { "id": "summer-menu", "title": "Yaz Menüsü Başladı", "summary": "Mevsimlik malzemelerle hazırlanan yeni menümüz yayında.", "body": "<p>Yaz mevsimine özel menümüzde soğuk başlangıçlar, ferahlatıcı içecekler ve hafif ana yemekler sizi bekliyor.</p>", "date": "2025-06-01", "attachments": [ { "type": "pdf", "label": "Yaz Menüsü PDF", "url": "docs/summer-menu.pdf" } ], "image": "images/res_img_1.jpg" },
-    { "id": "chef-workshop", "title": "Şef ile Atölye", "summary": "Şefimizle birlikte özel bir yemek atölyesine davetlisiniz.", "body": "<p>Katılımcılar sınırlıdır. Başlangıç tekniklerinden tatlılara uzanan keyifli bir atölye.</p>", "date": "2025-06-05", "attachments": [ { "type": "doc", "label": "Program Detayları", "url": "docs/chef-workshop.docx" } ], "image": "images/res_img_2.jpg" },
-    { "id": "live-music", "title": "Canlı Müzik Gecesi", "summary": "Cumartesi akşamı canlı caz performansı.", "body": "<p>Rezervasyon önerilir. Özel atıştırmalık menüsü ve içecek eşleşmeleri olacak.</p>", "date": "2025-06-08", "attachments": [], "image": "images/res_img_3.jpg" },
-    { "id": "father-day", "title": "Babalar Günü Menüsü", "summary": "Babalar Günü'ne özel set menü ve sürpriz tatlı.", "body": "<p>Üç aşamalı set menü, limitsiz alkolsüz içecek ve canlı piyano eşliğinde.</p>", "date": "2025-06-15", "attachments": [ { "type": "pdf", "label": "Set Menü", "url": "docs/fathers-day.pdf" }, { "type": "img", "label": "Afiş", "url": "images/res_img_4.jpg" } ], "image": "images/res_img_4.jpg" },
-    { "id": "new-branch", "title": "Yeni Şubemiz Açıldı", "summary": "Şehrin yeni noktasında sizleri bekliyoruz.", "body": "<p>Açılışa özel indirimler ve sürprizler için bizi ziyaret edin.</p>", "date": "2025-06-20", "attachments": [ { "type": "pdf", "label": "Açılış Broşürü", "url": "docs/new-branch.pdf" } ], "image": "images/res_img_5.jpg" }
+    { "id": "summer-sauces", "title": "Yaz Sos Serisi", "summary": "Mevsimlik malzemelerle hazırlanan yeni sos serimiz yayında.", "body": "<p>Soğuk dipler, ferahlatıcı soslar ve ızgaraya özel marine seçenekleri.</p>", "date": "2025-06-01", "attachments": [ { "type": "pdf", "label": "Yaz Sosları PDF", "url": "docs/summer-sauces.pdf" } ], "image": "images/soslar.jpeg" },
+    { "id": "chef-workshop", "title": "Şef ile Sos Atölyesi", "summary": "Sadece sos teknikleri ve reçeteleri odaklı mini atölye.", "body": "<p>Emülsiyon, fermente soslar ve eşleştirme ipuçları. Katılımcı sayısı sınırlıdır.</p>", "date": "2025-06-05", "attachments": [ { "type": "doc", "label": "Atölye Akışı", "url": "docs/chef-workshop.docx" } ] },
+    { "id": "spicy-week", "title": "Acı Sevenler Haftası", "summary": "Chili Lime ve Izgara Biber soslarında özel kampanya.", "body": "<p>Acı soslarımızda %15 indirim ve tadım seti hediyesi.</p>", "date": "2025-06-08", "attachments": [] },
+    { "id": "bundle-offer", "title": "3'lü Sos Paketi", "summary": "Trüf Mayonez, Parmesan Dip ve Pesto birlikte avantajlı.", "body": "<p>3'lü paket alımında kargo ücretsiz, stoklarla sınırlı.</p>", "date": "2025-06-12", "attachments": [ { "type": "pdf", "label": "Paket Detayı", "url": "docs/bundle.pdf" } ] },
+    { "id": "new-partner", "title": "Yeni İş Ortağı: Kadıköy", "summary": "Kadıköy'deki yeni partner kafe menüsüne soslarımız eklendi.", "body": "<p>Trüf Mayonez ve Yoğurtlu Tahin artık yerinde servis ediliyor.</p>", "date": "2025-06-20", "attachments": [] },
+    { "id": "return-bottles", "title": "Şişe İadesi Kampanyası", "summary": "Boş sos şişelerini getir, %10 indirim kazan.", "body": "<p>Temizlenmiş boş şişelerinizi mağazaya getirerek sonraki alışverişinizde indirim alın. Kampanya ay sonuna kadar geçerli.</p>", "date": "2025-06-25", "attachments": [] }
   ]
 }
 
